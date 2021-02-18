@@ -14069,6 +14069,19 @@
        <int>1</int>
       </void>
       <void property="processDescription">
+       <string>NovoProcessoAluno Bianca</string>
+      </void>
+      <void property="processId">
+       <string>030179</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
        <string>Borderô de Pagamento</string>
       </void>
       <void property="processId">
@@ -14108,7 +14121,20 @@
        <int>1</int>
       </void>
       <void property="processDescription">
-       <string>Solicitações de Autorização de Fornecimento</string>
+       <string>Parcela de Contratos</string>
+      </void>
+      <void property="processId">
+       <string>ParcelaContratos</string>
+      </void>
+     </object>
+    </void>
+    <void method="add">
+     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
+      <void property="companyId">
+       <int>1</int>
+      </void>
+      <void property="processDescription">
+       <string>Solicitações de Autorização de Despesas</string>
       </void>
       <void property="processId">
        <string>SolAutFornecimento</string>
@@ -14147,20 +14173,7 @@
        <int>1</int>
       </void>
       <void property="processDescription">
-       <string>Prestação de contas de despesas com alimentação</string>
-      </void>
-      <void property="processId">
-       <string>SolicitacaoReembAliment</string>
-      </void>
-     </object>
-    </void>
-    <void method="add">
-     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
-      <void property="companyId">
-       <int>1</int>
-      </void>
-      <void property="processDescription">
-       <string>Solicitação de reembolso</string>
+       <string>Solicitação de Reembolso</string>
       </void>
       <void property="processId">
        <string>SolicitacaoReembolso</string>
@@ -14186,23 +14199,10 @@
        <int>1</int>
       </void>
       <void property="processDescription">
-       <string>Solicitações de Parcelas de Contrato</string>
+       <string>Solicitações de Pedido de Pagamento</string>
       </void>
       <void property="processId">
-       <string>SolParcelasContrato</string>
-      </void>
-     </object>
-    </void>
-    <void method="add">
-     <object class="com.totvs.tds.ecm.foundation.ws.ProcessDefinitionDto">
-      <void property="companyId">
-       <int>1</int>
-      </void>
-      <void property="processDescription">
-       <string>Solicitações de Parcelas de Contratos</string>
-      </void>
-      <void property="processId">
-       <string>SolParcelasContratos</string>
+       <string>SolPedPagamento</string>
       </void>
      </object>
     </void>
