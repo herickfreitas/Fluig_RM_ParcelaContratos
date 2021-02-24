@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, user-scalable=no">
-  <title>Parcelas de Contratos</title>
+  <title>Formulário de Parcelas de Contrato</title>
 
   <link rel="stylesheet" type="text/css" href="/portal/resources/style-guide/css/fluig-style-guide.min.css">
 
@@ -18,7 +18,7 @@
 </head>
 
 <body>
-  <form name="formParcelasContratos" role="form">
+  <form name="formPedPagamento" role="form">
     <div class="fluig-style-guide">
       <div class="panel panel-default">
         <div class="panel-heading">
@@ -49,6 +49,7 @@
                 <input class="form-control" type="text" name="dataEmissao" id="dataEmissao" readonly="on" />
               </div>
             </div>
+  
 
             <div class="row form-group" id="dvCustomizada">
               <div class="col-xs-6 col-md-2">
@@ -59,20 +60,24 @@
                 <label class='control-label' id='lblsolicitante'>Solicitante</label>
                 <input class="form-control" type="text" name="solicitante" id="solicitante" readonly="on" />
               </div>
-              <div class="col-xs-6 col-md-2" id="divGestorcc">
-                <label class="control-label" id="lblGestorcc">Gestor do Centro de Custo</label>
-                <input class="form-control" type="text" name="gestorcc" id="gestorcc" readonly="on"  />
+              <div class="col-xs-6 col-md-2" id="divChefia">
+                <label class="control-label" id="lblchefia">Chefia Imediata/Gestor</label>
+                <input class="form-control" type="text" name="chefia" id="chefia" readonly="on"  />
               </div>
               <div class="col-xs-6 col-md-2" id="divfiscalAprov">
                 <label class="control-label" id="lblfiscalAprov">Grupo para análise fiscal</label>
                 <input class="form-control" type="text" name="fiscalAprov" id="fiscalAprov" readonly="on" />
               </div>
+              <div class="col-xs-6 col-md-2" id="divGestorcc">
+                <label class="control-label" id="lblGestorcc">Gestor do Centro de Custo</label>
+                <input class="form-control" type="text" name="gestorcc" id="gestorcc" readonly="on"  />
+              </div>
               <div class="col-xs-6 col-md-2" id="divdescritor">
                 <label class="control-label" id="lbldescritor">Campo Descritor</label>
                 <input class="form-control" type="text" name="descritor" id="descritor" readonly="on" />
               </div>
-    			 </div>
-
+            
+            </div>
 
             <div class="row form-group">
               <div class="col-xs-12 col-md-5">
@@ -103,10 +108,10 @@
             <div class="panel panel-default" id="dvMovRatCcu">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                   <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#collapseMovRatCcu">
-                   Rateios: Centro de Custo
-                   </a>
-                 </h4>
+                  <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#collapseMovRatCcu">
+                    Rateios: Centro de Custo
+                  </a>
+                </h4>
               </div>
               <div id="collapseMovRatCcu" class="panel-collapse collapse in">
                 <div class="panel-body">
@@ -117,10 +122,10 @@
             <div class="panel panel-default" id="dvMovRatDep">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                   <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#collapseMovRatDep">
-                   Rateios: Departamento
-                   </a>
-                 </h4>
+                  <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#collapseMovRatDep">
+                    Rateios: Departamento
+                  </a>
+                </h4>
               </div>
               <div id="collapseMovRatDep" class="panel-collapse collapse in">
                 <div class="panel-body">
@@ -131,10 +136,10 @@
             <div class="panel panel-default" id="dvMedicao">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                   <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#collapseMedicao">
-                   Medições
-                   </a>
-                 </h4>
+                  <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#collapseMedicao">
+                    Medições
+                  </a>
+                </h4>
               </div>
               <div id="collapseMedicao" class="panel-collapse collapse in">
                 <div class="panel-body">
@@ -151,10 +156,10 @@
             <div class="panel panel-default" id="dvInfo">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                   <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#collapseInfo">
-                   Informações Adicionais
-                   </a>
-                 </h4>
+                  <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#collapseInfo">
+                    Informações Adicionais
+                  </a>
+                </h4>
               </div>
               <div id="collapseInfo" class="panel-collapse collapse in">
                 <div class="panel-body">
@@ -164,7 +169,8 @@
                   </div>
                   <div class="col-xs-12 col-md-12" id="divHistoricoLongo">
                     <label class="control-label" id="lblHistoricoLongo">Hist&oacute;rico</label>
-                    <textarea rows="4" cols="75" class="form-control" readonly="on" name="codHistoricoLongo" id="codHistoricoLongo"></textarea>
+                    <textarea rows="4" cols="75" class="form-control" readonly="on" name="codHistoricoLongo"
+                      id="codHistoricoLongo"></textarea>
                   </div>
                 </div>
               </div>
@@ -179,10 +185,10 @@
             <div class="panel panel-default" id="dvItmMov">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                   <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#collapseItmMov">
-                   Itens de Movimento
-                   </a>
-                 </h4>
+                  <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#collapseItmMov">
+                    Itens de Movimento
+                  </a>
+                </h4>
               </div>
               <div id="collapseItmMov" class="panel-collapse collapse">
                 <div class="panel-body">
@@ -193,10 +199,11 @@
             <div class="panel panel-default" id="dvItmMovRatCcu">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                   <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#collapseItmMovRatCcu">
-                   Rateios: Centro de Custo
-                   </a>
-                 </h4>
+                  <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+                    href="#collapseItmMovRatCcu">
+                    Rateios: Centro de Custo
+                  </a>
+                </h4>
               </div>
               <div id="collapseItmMovRatCcu" class="panel-collapse collapse in">
                 <div class="panel-body">
@@ -207,10 +214,11 @@
             <div class="panel panel-default" id="dvItmMovRatDep">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                   <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#collapseItmMovRatDep">
-                   Rateios: Departamento
-                   </a>
-                 </h4>
+                  <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion"
+                    href="#collapseItmMovRatDep">
+                    Rateios: Departamento
+                  </a>
+                </h4>
               </div>
               <div id="collapseItmMovRatDep" class="panel-collapse collapse in">
                 <div class="panel-body">
@@ -221,10 +229,10 @@
             <div class="panel panel-default" id="dvUltimaCmp">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                   <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#collapseUltimaCmp">
-                   Últimas Compras
-                   </a>
-                 </h4>
+                  <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#collapseUltimaCmp">
+                    Últimas Compras
+                  </a>
+                </h4>
               </div>
               <div id="collapseUltimaCmp" class="panel-collapse collapse in">
                 <div class="panel-body">
@@ -235,10 +243,10 @@
             <div class="panel panel-default" id="dvInfoItem">
               <div class="panel-heading">
                 <h4 class="panel-title">
-                   <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#collapseInfoItem">
-                   Informações Adicionais
-                   </a>
-                 </h4>
+                  <a class="collapse-icon up" data-toggle="collapse" data-parent="#accordion" href="#collapseInfoItem">
+                    Informações Adicionais
+                  </a>
+                </h4>
               </div>
               <div id="collapseInfoItem" class="panel-collapse collapse in">
                 <div class="panel-body">
@@ -253,16 +261,15 @@
   </form>
 
   <script>
-  
- 	// Formata moeda
+    // Formata moeda
     function formatMoney(num, symbol, thousand, decimal) {
       symbol = symbol !== undefined ? symbol : 'R$';
       return symbol + numeral(num).format('0,0.00');
     }
 
     // carrega o form com um timeout  
-    $( document ).ready(function() {
-      setTimeout(function() {
+    $(document).ready(function () {
+      setTimeout(function () {
         LoadForm();
         $('#loading').hide();
       }, 500);
@@ -316,7 +323,7 @@
             billion: 'b',
             trillion: 't'
           },
-          ordinal: function(number) {
+          ordinal: function (number) {
             return 'º';
           },
           currency: {
@@ -327,7 +334,7 @@
 
         var codcoligada = $('#CodColigada').val();
         var idmov = $('#IdMov').val();
-        var idFluig = $('#IdentificadorFluig').val();        
+        var idFluig = $('#IdentificadorFluig').val();
 
         // recupera os dados do dataset
         var fields = new Array(codcoligada, idmov, idFluig);
@@ -345,7 +352,7 @@
         if (exibeCfo == '1') {
           $('#divCodCfo').hide();
         }
-		    
+
         // Campos do Projeto
         var HidePanel = 0;
         var cabecalhoPedido;
@@ -371,9 +378,8 @@
           $('#dvMedicao').hide();
           $('#divPrj').hide();
           $('#divContrato').hide();
-	        $('#dvCustomizada').hide();				//HERICK - Inserido
+          $('#dvCustomizada').hide();				//HERICK - Inserido
           $('#dvUltimaCmp').hide();					//HERICK - Inserido
-
           HidePanel++;
 
         } else {
@@ -434,7 +440,7 @@
         } else {
           // Se usa Historico no Item é preenchida a tabela.
           var infoItemJSON = [];
-          $(xml).find('TITMMOV').each(function(index) {
+          $(xml).find('TITMMOV').each(function (index) {
             infoItemJSON.push({
               'hist': $(this).find('HISTORICOLONGO').text() + '' + $(this).find('HISTORICOCURTO').text(),
               'seq': $(this).find('NUMEROSEQUENCIAL').text()
@@ -443,41 +449,40 @@
 
           var tblInfoItem = FLUIGC.datatable('#tblInfoItem', {
             mobileMainColumns: [0],
-               dataRequest: infoItemJSON,
+            dataRequest: infoItemJSON,
             renderContent: ['hist', 'seq'],
-               header: [{
+            header: [{
               'title': 'Histórico'
             }, {
               'title': 'Seq. Item'
-            } ],
-			
-			  search: {
-						enabled: true,
-						onlyEnterkey: true,
-						searchAreaStyle: 'col-md-5',
-						onSearch: function(res) {
-						  var t = this.tableData;
-						  if (res) {									
-							var data = infoItemJSON;
-							var search = data.filter(function(el) {
-							  return ( (el.hist.toUpperCase().indexOf(res.toUpperCase()) >= 0) || (el.seq.toUpperCase().indexOf(res.toUpperCase()) >= 0));
-							});									
-							tblInfoItem.reload(search);
-						  }else
-						  {
-							tblInfoItem.reload(infoItemJSON);
-						  }
-						}
-					  },
-				  scroll: {
-					target: ".target",
-					enabled: false
-				  },
-				  navButtons: {
-					enabled: false
-				  }
-	
-          }, function(err, data) {});
+            }],
+
+            search: {
+              enabled: true,
+              onlyEnterkey: true,
+              searchAreaStyle: 'col-md-5',
+              onSearch: function (res) {
+                var t = this.tableData;
+                if (res) {
+                  var data = infoItemJSON;
+                  var search = data.filter(function (el) {
+                    return ((el.hist.toUpperCase().indexOf(res.toUpperCase()) >= 0) || (el.seq.toUpperCase().indexOf(res.toUpperCase()) >= 0));
+                  });
+                  tblInfoItem.reload(search);
+                } else {
+                  tblInfoItem.reload(infoItemJSON);
+                }
+              }
+            },
+            scroll: {
+              target: ".target",
+              enabled: false
+            },
+            navButtons: {
+              enabled: false
+            }
+
+          }, function (err, data) { });
         }
 
         // Campo Moeda
@@ -488,7 +493,7 @@
         if (exibeVrLiquido == '1') {
           $('#divValorliquido').hide();
         }
-        
+
         // Visibilidade das Colunas
         var visibleItemSeq = true;
         var visibleItemDepto = true;
@@ -529,7 +534,7 @@
           }];
 
           var itmMovRatDepJSON = [];
-          $(xml).find('TITMMOVRATDEP').each(function(index) {
+          $(xml).find('TITMMOVRATDEP').each(function (index) {
             itmMovRatDepJSON.push({
               'depto': $(this).find('CODDEPARTAMENTO').text() + ' - ' + $(this).find('NOME').text(),
               'valor': formatMoney($(this).find('VALOR').text(), codMoeda, '.', ','),
@@ -540,9 +545,9 @@
 
           var tblItmMovRatDep = FLUIGC.datatable('#tblItmMovRatDep', {
             mobileMainColumns: [0, 1],
-               dataRequest: itmMovRatDepJSON,
+            dataRequest: itmMovRatDepJSON,
             renderContent: ['depto', 'valor', 'percent', 'seq'],
-               header: [{
+            header: [{
               'title': 'Departamento'
             }, {
               'title': 'Valor'
@@ -550,38 +555,37 @@
               'title': 'Percentual'
             }, {
               'title': 'Seq. Item'
-            }   ],
-			
-			search: {
-						enabled: true,
-						onlyEnterkey: true,
-						searchAreaStyle: 'col-md-5',
-						onSearch: function(res) {
-						  var t = this.tableData;
-						  if (res) {									
-							var data = itmMovRatDepJSON;
-							var search = data.filter(function(el) {
-							  return ( (el.depto.toUpperCase().indexOf(res.toUpperCase()) >= 0) || (el.seq.toUpperCase().indexOf(res.toUpperCase()) >= 0));
-							});									
-							tblItmMovRatDep.reload(search);
-						  }else
-						  {
-							tblItmMovRatDep.reload(itmMovRatDepJSON);
-						  }
-						}
-					  },
-				  scroll: {
-					target: ".target",
-					enabled: false
-				  },
-				  navButtons: {
-					enabled: false
-				  }
-			
-          }, function(err, data) {});
+            }],
+
+            search: {
+              enabled: true,
+              onlyEnterkey: true,
+              searchAreaStyle: 'col-md-5',
+              onSearch: function (res) {
+                var t = this.tableData;
+                if (res) {
+                  var data = itmMovRatDepJSON;
+                  var search = data.filter(function (el) {
+                    return ((el.depto.toUpperCase().indexOf(res.toUpperCase()) >= 0) || (el.seq.toUpperCase().indexOf(res.toUpperCase()) >= 0));
+                  });
+                  tblItmMovRatDep.reload(search);
+                } else {
+                  tblItmMovRatDep.reload(itmMovRatDepJSON);
+                }
+              }
+            },
+            scroll: {
+              target: ".target",
+              enabled: false
+            },
+            navButtons: {
+              enabled: false
+            }
+
+          }, function (err, data) { });
 
           // oculta as colunas
-          $.each(colunasItemRatDep, function(i, item) {
+          $.each(colunasItemRatDep, function (i, item) {
             if (item.visible == false) {
               tblItmMovRatDep.hideColumn(item.targets);
             }
@@ -628,7 +632,7 @@
           }];
 
           var movRatDepJSON = [];
-          $(xml).find('TMOVRATDEP').each(function(index) {
+          $(xml).find('TMOVRATDEP').each(function (index) {
             movRatDepJSON.push({
               'depto': $(this).find('CODDEPARTAMENTO').text() + ' - ' + $(this).find('NOME').text(),
               'valor': formatMoney($(this).find('VALOR').text(), codMoeda, '.', ','),
@@ -638,46 +642,45 @@
 
           var tblMovRatDep = FLUIGC.datatable('#tblMovRatDep', {
             mobileMainColumns: [0, 1],
-               dataRequest: movRatDepJSON,
+            dataRequest: movRatDepJSON,
             renderContent: ['depto', 'valor', 'percent'],
-               header: [{
+            header: [{
               'title': 'Departamento'
             }, {
               'title': 'Valor'
             }, {
               'title': 'Percentual'
-            }   ],
-			
-			search: {
-				enabled: true,
-				onlyEnterkey: true,
-				searchAreaStyle: 'col-md-5',
-				onSearch: function(res) {
-				  var t = this.tableData;
-				  if (res) {									
-					var data = movRatDepJSON;
-					var search = data.filter(function(el) {
-					  return ( (el.depto.toUpperCase().indexOf(res.toUpperCase()) >= 0) );
-					});									
-					tblMovRatDep.reload(search);
-				  }else
-				  {
-					tblMovRatDep.reload(movRatDepJSON);
-				  }
-				}
-			},
-			scroll: {
-				target: ".target",
-				enabled: false
-			},
-			navButtons: {
-				enabled: false
-			}
-			
-          }, function(err, data) {});
+            }],
+
+            search: {
+              enabled: true,
+              onlyEnterkey: true,
+              searchAreaStyle: 'col-md-5',
+              onSearch: function (res) {
+                var t = this.tableData;
+                if (res) {
+                  var data = movRatDepJSON;
+                  var search = data.filter(function (el) {
+                    return ((el.depto.toUpperCase().indexOf(res.toUpperCase()) >= 0));
+                  });
+                  tblMovRatDep.reload(search);
+                } else {
+                  tblMovRatDep.reload(movRatDepJSON);
+                }
+              }
+            },
+            scroll: {
+              target: ".target",
+              enabled: false
+            },
+            navButtons: {
+              enabled: false
+            }
+
+          }, function (err, data) { });
 
           // oculta as colunas
-          $.each(colunasRatDep, function(i, item) {
+          $.each(colunasRatDep, function (i, item) {
             if (item.visible == false) {
               tblMovRatDep.hideColumn(item.targets);
             }
@@ -754,7 +757,7 @@
           }];
 
           var itmMovRatCcuJSON = [];
-          $(xml).find('TITMMOVRATCCU').each(function(index) {
+          $(xml).find('TITMMOVRATCCU').each(function (index) {
             itmMovRatCcuJSON.push({
               'cc': $(this).find('CODCCUSTO').text() + ' - ' + $(this).find('NOME').text(),
               'valor': formatMoney($(this).find('VALOR').text(), codMoeda, '.', ','),
@@ -767,9 +770,9 @@
 
           var tblItmMovRatCcu = FLUIGC.datatable('#tblItmMovRatCcu', {
             mobileMainColumns: [0, 1],
-               dataRequest: itmMovRatCcuJSON,
+            dataRequest: itmMovRatCcuJSON,
             renderContent: ['cc', 'valor', 'percent', 'tarefa', 'prj', 'seq'],
-               header: [{
+            header: [{
               'title': 'Centro de Custo'
             }, {
               'title': 'Valor'
@@ -781,39 +784,38 @@
               'title': 'Projeto'
             }, {
               'title': 'Seq. Item'
-            }   ],
-			
-			search: {
-				enabled: true,
-				onlyEnterkey: true,
-				searchAreaStyle: 'col-md-5',
-				onSearch: function(res) {
-				  var t = this.tableData;
-				  if (res) {									
-					var data = itmMovRatCcuJSON;
-					var search = data.filter(function(el) {
-					  return ( (el.cc.toUpperCase().indexOf(res.toUpperCase()) >= 0) || (el.prj.toUpperCase().indexOf(res.toUpperCase()) >= 0)
-							|| (el.tarefa.toUpperCase().indexOf(res.toUpperCase()) >= 0));
-					});									
-					tblItmMovRatCcu.reload(search);
-				  }else
-				  {
-					tblItmMovRatCcu.reload(itmMovRatCcuJSON);
-				  }
-				}
-			},
-			scroll: {
-				target: ".target",
-				enabled: false
-			},
-			navButtons: {
-				enabled: false
-			}
-          }, function(err, data) {});
+            }],
+
+            search: {
+              enabled: true,
+              onlyEnterkey: true,
+              searchAreaStyle: 'col-md-5',
+              onSearch: function (res) {
+                var t = this.tableData;
+                if (res) {
+                  var data = itmMovRatCcuJSON;
+                  var search = data.filter(function (el) {
+                    return ((el.cc.toUpperCase().indexOf(res.toUpperCase()) >= 0) || (el.prj.toUpperCase().indexOf(res.toUpperCase()) >= 0)
+                      || (el.tarefa.toUpperCase().indexOf(res.toUpperCase()) >= 0));
+                  });
+                  tblItmMovRatCcu.reload(search);
+                } else {
+                  tblItmMovRatCcu.reload(itmMovRatCcuJSON);
+                }
+              }
+            },
+            scroll: {
+              target: ".target",
+              enabled: false
+            },
+            navButtons: {
+              enabled: false
+            }
+          }, function (err, data) { });
 
 
           // oculta as colunas
-          $.each(colunasItemRatCcu, function(i, item) {
+          $.each(colunasItemRatCcu, function (i, item) {
             if (item.visible == false) {
               tblItmMovRatCcu.hideColumn(item.targets);
             }
@@ -884,7 +886,7 @@
           }];
 
           var movRatCcuJSON = [];
-          $(xml).find('TMOVRATCCU').each(function(index) {
+          $(xml).find('TMOVRATCCU').each(function (index) {
             movRatCcuJSON.push({
               'cc': $(this).find('CODCCUSTO').text() + ' - ' + $(this).find('NOME').text(),
               'valor': formatMoney($(this).find('VALOR').text(), codMoeda, '.', ','),
@@ -896,9 +898,9 @@
 
           var tblMovRatCcu = FLUIGC.datatable('#tblMovRatCcu', {
             mobileMainColumns: [0, 1],
-               dataRequest: movRatCcuJSON,
+            dataRequest: movRatCcuJSON,
             renderContent: ['cc', 'valor', 'percent', 'tarefa', 'prj'],
-               header: [{
+            header: [{
               'title': 'Centro de Custo'
             }, {
               'title': 'Valor'
@@ -908,39 +910,38 @@
               'title': 'Tarefa'
             }, {
               'title': 'Projeto'
-            }   ],
-			
-			search: {
-				enabled: true,
-				onlyEnterkey: true,
-				searchAreaStyle: 'col-md-5',
-				onSearch: function(res) {
-				  var t = this.tableData;
-				  if (res) {									
-					var data = movRatCcuJSON;
-					var search = data.filter(function(el) {
-					  return ( (el.cc.toUpperCase().indexOf(res.toUpperCase()) >= 0) || (el.tarefa.toUpperCase().indexOf(res.toUpperCase()) >= 0)
-					      || (el.prj.toUpperCase().indexOf(res.toUpperCase()) >= 0));
-					});									
-					tblMovRatCcu.reload(search);
-				  }else
-				  {
-					tblMovRatCcu.reload(movRatCcuJSON);
-				  }
-				}
-			},
-			scroll: {
-				target: ".target",
-				enabled: false
-			},
-			navButtons: {
-				enabled: false
-			}
-			
-          }, function(err, data) {});
+            }],
+
+            search: {
+              enabled: true,
+              onlyEnterkey: true,
+              searchAreaStyle: 'col-md-5',
+              onSearch: function (res) {
+                var t = this.tableData;
+                if (res) {
+                  var data = movRatCcuJSON;
+                  var search = data.filter(function (el) {
+                    return ((el.cc.toUpperCase().indexOf(res.toUpperCase()) >= 0) || (el.tarefa.toUpperCase().indexOf(res.toUpperCase()) >= 0)
+                      || (el.prj.toUpperCase().indexOf(res.toUpperCase()) >= 0));
+                  });
+                  tblMovRatCcu.reload(search);
+                } else {
+                  tblMovRatCcu.reload(movRatCcuJSON);
+                }
+              }
+            },
+            scroll: {
+              target: ".target",
+              enabled: false
+            },
+            navButtons: {
+              enabled: false
+            }
+
+          }, function (err, data) { });
 
           // oculta as colunas
-          $.each(colunasRatCcu, function(i, item) {
+          $.each(colunasRatCcu, function (i, item) {
             if (item.visible == false) {
               tblMovRatCcu.hideColumn(item.targets);
             }
@@ -952,19 +953,19 @@
         }
 
         // Carrega Movimentos
-        $(xml).find('TMOV').each(function(index) {
+        $(xml).find('TMOV').each(function (index) {
           $('#CodPrj').val($(this).find('CODPRJ').text() + ' - ' + $(this).find('DESCPROJETO').text());
           $('#DescContrato').val($(this).find('NUMCONTRATO').text());
           $('#numeroMov').val($(this).find('NUMEROMOV').text());
           $('#codFilial').val($(this).find('CODFILIAL').text() + ' - ' + $(this).find('NOMEFILIAL').text());
           $('#codcfo').val($(this).find('CODCFO').text() + ' - ' + $(this).find('NOMECFO').text());
           $('#dataEmissao').val(formatDateMask($(this).find('DATAEMISSAO').text()));
-          $('#valorliquido').val(formatMoney($(this).find('VALORLIQUIDO').text(), codMoeda, '.', ','));          
+          $('#valorliquido').val(formatMoney($(this).find('VALORLIQUIDO').text(), codMoeda, '.', ','));
         });
 
         // Carrega Medições
         var medicaoJSON = [];
-        $(xml).find('MEDICAO').each(function(index) {
+        $(xml).find('MEDICAO').each(function (index) {
           medicaoJSON.push({
             'medicao': $(this).find('ITEMMEDICAO').text(),
             'periodo': $(this).find('PERIODO').text(),
@@ -978,9 +979,9 @@
 
         var tblMedicao = FLUIGC.datatable('#tblMedicao', {
           mobileMainColumns: [0, 2, 3],
-             dataRequest: medicaoJSON,
+          dataRequest: medicaoJSON,
           renderContent: ['medicao', 'periodo', 'qtde', 'valMedido', 'percCtr', 'percTarefa', 'saldo'],
-             header: [{
+          header: [{
             'title': 'Medição'
           }, {
             'title': 'Período'
@@ -994,39 +995,38 @@
             'title': '(%) Tarefa'
           }, {
             'title': 'Saldo'
-          }   ],
-		  
-			search: {
-				enabled: true,
-				onlyEnterkey: true,
-				searchAreaStyle: 'col-md-5',
-				onSearch: function(res) {
-				  var t = this.tableData;
-				  if (res) {									
-					var data = medicaoJSON;
-					var search = data.filter(function(el) {
-					  return ( (el.medicao.toUpperCase().indexOf(res.toUpperCase()) >= 0) || (el.periodo.toUpperCase().indexOf(res.toUpperCase()) >= 0));
-					});									
-					tblMedicao.reload(search);
-				  }else
-				  {
-					tblMedicao.reload(medicaoJSON);
-				  }
-				}
-			},
-			scroll: {
-				target: ".target",
-				enabled: false
-			},
-			navButtons: {
-				enabled: false
-			}
-			
-        }, function(err, data) {});
+          }],
+
+          search: {
+            enabled: true,
+            onlyEnterkey: true,
+            searchAreaStyle: 'col-md-5',
+            onSearch: function (res) {
+              var t = this.tableData;
+              if (res) {
+                var data = medicaoJSON;
+                var search = data.filter(function (el) {
+                  return ((el.medicao.toUpperCase().indexOf(res.toUpperCase()) >= 0) || (el.periodo.toUpperCase().indexOf(res.toUpperCase()) >= 0));
+                });
+                tblMedicao.reload(search);
+              } else {
+                tblMedicao.reload(medicaoJSON);
+              }
+            }
+          },
+          scroll: {
+            target: ".target",
+            enabled: false
+          },
+          navButtons: {
+            enabled: false
+          }
+
+        }, function (err, data) { });
 
         // Carrega Deduções
         var deducaoJSON = [];
-        $(xml).find('DEDUCAO').each(function(index) {
+        $(xml).find('DEDUCAO').each(function (index) {
           if ($(this).find('DEDUCAO').text() != '') {
             deducaoJSON.push({
               'deducao': $(this).find('DEDUCAO').text(),
@@ -1037,45 +1037,44 @@
 
         var tblDeducao = FLUIGC.datatable('#tblDeducao', {
           mobileMainColumns: [0, 1],
-             dataRequest: deducaoJSON,
+          dataRequest: deducaoJSON,
           renderContent: ['deducao', 'valor'],
-             header: [{
+          header: [{
             'title': 'Dedução'
           }, {
             'title': 'Valor'
-          }   ],
-		  
-			search: {
-				enabled: true,
-				onlyEnterkey: true,
-				searchAreaStyle: 'col-md-5',
-				onSearch: function(res) {
-				  var t = this.tableData;
-				  if (res) {									
-					var data = deducaoJSON;
-					var search = data.filter(function(el) {
-					  return ( (el.deducao.toUpperCase().indexOf(res.toUpperCase()) >= 0));
-					});									
-					tblDeducao.reload(search);
-				  }else
-				  {
-					tblDeducao.reload(deducaoJSON);
-				  }
-				}
-			},
-			scroll: {
-				target: ".target",
-				enabled: false
-			},
-			navButtons: {
-				enabled: false
-			}
-			
-        }, function(err, data) {});
+          }],
+
+          search: {
+            enabled: true,
+            onlyEnterkey: true,
+            searchAreaStyle: 'col-md-5',
+            onSearch: function (res) {
+              var t = this.tableData;
+              if (res) {
+                var data = deducaoJSON;
+                var search = data.filter(function (el) {
+                  return ((el.deducao.toUpperCase().indexOf(res.toUpperCase()) >= 0));
+                });
+                tblDeducao.reload(search);
+              } else {
+                tblDeducao.reload(deducaoJSON);
+              }
+            }
+          },
+          scroll: {
+            target: ".target",
+            enabled: false
+          },
+          navButtons: {
+            enabled: false
+          }
+
+        }, function (err, data) { });
 
         // Carrega Retenção
         var retencaoJSON = [];
-        $(xml).find('RETENCAO').each(function(index) {
+        $(xml).find('RETENCAO').each(function (index) {
           if ($(this).find('RETENCAO').text() != '') {
             retencaoJSON.push({
               'retencao': $(this).find('RETENCAO').text(),
@@ -1086,41 +1085,40 @@
 
         var tblRetencao = FLUIGC.datatable('#tblRetencao', {
           mobileMainColumns: [0, 1],
-             dataRequest: retencaoJSON,
+          dataRequest: retencaoJSON,
           renderContent: ['retencao', 'valor'],
-             header: [{
+          header: [{
             'title': 'Retenção'
           }, {
             'title': 'Valor'
-          }   ],
-		  
-			search: {
-				enabled: true,
-				onlyEnterkey: true,
-				searchAreaStyle: 'col-md-5',
-				onSearch: function(res) {
-				  var t = this.tableData;
-				  if (res) {									
-					var data = retencaoJSON;
-					var search = data.filter(function(el) {
-					  return ( (el.retencao.toUpperCase().indexOf(res.toUpperCase()) >= 0));
-					});									
-					tblRetencao.reload(search);
-				  }else
-				  {
-					tblRetencao.reload(retencaoJSON);
-				  }
-				}
-			},
-			scroll: {
-				target: ".target",
-				enabled: false
-			},
-			navButtons: {
-				enabled: false
-			}
-			
-        }, function(err, data) {});
+          }],
+
+          search: {
+            enabled: true,
+            onlyEnterkey: true,
+            searchAreaStyle: 'col-md-5',
+            onSearch: function (res) {
+              var t = this.tableData;
+              if (res) {
+                var data = retencaoJSON;
+                var search = data.filter(function (el) {
+                  return ((el.retencao.toUpperCase().indexOf(res.toUpperCase()) >= 0));
+                });
+                tblRetencao.reload(search);
+              } else {
+                tblRetencao.reload(retencaoJSON);
+              }
+            }
+          },
+          scroll: {
+            target: ".target",
+            enabled: false
+          },
+          navButtons: {
+            enabled: false
+          }
+
+        }, function (err, data) { });
 
         // Visibilidade do Preco Unitario
         var exibeVrUnitario = CampoVisivel($xml.find('TITMMOV').find('CAMPOINVISIVEL').text(), 'PRECOUNITARIO');
@@ -1177,7 +1175,7 @@
         }];
 
         var itmMovJSON = [];
-        $(xml).find('TITMMOV').each(function(index) {
+        $(xml).find('TITMMOV').each(function (index) {
           itmMovJSON.push({
             'prd': $(this).find('CODIGOPRD').text() + ' - ' + $(this).find('NOMEFANTASIA').text(),
             'und': $(this).find('CODUND').text(),
@@ -1186,7 +1184,7 @@
             'pedido': formatMoney($(this).find('PERCENTUALPEDIDO').text(), '', '.', ','),
             'precoMedio': formatMoney($(this).find('PRECOMEDIO').text(), codMoeda, '.', ','),
             'ultPreco': formatMoney($(this).find('ULTIMOPRECO').text(), codMoeda, '.', ','),
-            'valor': formatMoney($(this).find('VALORBRUTOITEM').text(), codMoeda, '.', ','),			
+            'valor': formatMoney($(this).find('VALORBRUTOITEM').text(), codMoeda, '.', ','),
             'insumo': $(this).find('CODIGOINSUMO').text() + ' - ' + $(this).find('DESCRICAOINSUMO').text(),
             'valorOrcado': formatMoney($(this).find('PRECOORCADO').text(), codMoeda, '.', ','),
             'seq': $(this).find('NUMEROSEQUENCIAL').text()
@@ -1195,9 +1193,9 @@
 
         var tblItmMov = FLUIGC.datatable('#tblItmMov', {
           mobileMainColumns: [0, 2, 3],
-             dataRequest: itmMovJSON,
+          dataRequest: itmMovJSON,
           renderContent: ['prd', 'und', 'qtde', 'preco', 'pedido', 'precoMedio', 'ultPreco', 'valor', 'insumo', 'valorOrcado', 'seq'],
-             header: [{
+          header: [{
             'title': 'Produto'
           }, {
             'title': 'Unidade'
@@ -1219,37 +1217,36 @@
             'title': 'Valor Orçado'
           }, {
             'title': 'Sequencial'
-          }   ],
-		  
-			search: {
-				enabled: true,
-				onlyEnterkey: true,
-				searchAreaStyle: 'col-md-5',
-				onSearch: function(res) {
-				  var t = this.tableData;
-				  if (res) {									
-					var data = itmMovJSON;
-					var search = data.filter(function(el) {
-					  return ( (el.prd.toUpperCase().indexOf(res.toUpperCase()) >= 0) || (el.seq.toUpperCase().indexOf(res.toUpperCase()) >= 0));
-					});									
-					tblItmMov.reload(search);
-				  }else
-				  {
-					tblItmMov.reload(itmMovJSON);
-				  }
-				}
-			},
-			scroll: {
-				target: ".target",
-				enabled: false
-			},
-			navButtons: {
-				enabled: false
-			}		  
-        }, function(err, data) {});
+          }],
+
+          search: {
+            enabled: true,
+            onlyEnterkey: true,
+            searchAreaStyle: 'col-md-5',
+            onSearch: function (res) {
+              var t = this.tableData;
+              if (res) {
+                var data = itmMovJSON;
+                var search = data.filter(function (el) {
+                  return ((el.prd.toUpperCase().indexOf(res.toUpperCase()) >= 0) || (el.seq.toUpperCase().indexOf(res.toUpperCase()) >= 0));
+                });
+                tblItmMov.reload(search);
+              } else {
+                tblItmMov.reload(itmMovJSON);
+              }
+            }
+          },
+          scroll: {
+            target: ".target",
+            enabled: false
+          },
+          navButtons: {
+            enabled: false
+          }
+        }, function (err, data) { });
 
         // oculta as colunas
-        $.each(colsItmMov, function(i, item) {
+        $.each(colsItmMov, function (i, item) {
           if (item.visible == false) {
             tblItmMov.hideColumn(item.targets);
           }
@@ -1259,7 +1256,7 @@
         // últimas compras
         if ($xml.find('Mov').find('MovMovimento').find('TMOV').find('TIPOMOVCOMPRAS').text() == '2') {
           var ultimasComprasJSON = [];
-          $(xml).find('ULTIMACOMPRA').each(function(index) {
+          $(xml).find('ULTIMACOMPRA').each(function (index) {
             ultimasComprasJSON.push({
               'prd': $(this).find('PRODUTO').text(),
               'tipoMov': $(this).find('CODTMV').text(),
@@ -1274,9 +1271,9 @@
 
           var tblUltimasCompras = FLUIGC.datatable('#tblUltimasCompras', {
             mobileMainColumns: [0, 6, 7],
-               dataRequest: ultimasComprasJSON,
+            dataRequest: ultimasComprasJSON,
             renderContent: ['prd', 'tipoMov', 'clifor', 'und', 'condPgto', 'dtEmissao', 'qtde', 'preco'],
-               header: [{
+            header: [{
               'title': 'Produto'
             }, {
               'title': 'Tipo de Movimento'
@@ -1292,34 +1289,33 @@
               'title': 'Quantidade'
             }, {
               'title': 'Preço Unitário'
-            }   ],
-			
-			search: {
-				enabled: true,
-				onlyEnterkey: true,
-				searchAreaStyle: 'col-md-5',
-				onSearch: function(res) {
-				  var t = this.tableData;
-				  if (res) {									
-					var data = ultimasComprasJSON;
-					var search = data.filter(function(el) {
-					  return ( (el.prd.toUpperCase().indexOf(res.toUpperCase()) >= 0) || (el.clifor.toUpperCase().indexOf(res.toUpperCase()) >= 0));
-					});									
-					tblUltimasCompras.reload(search);
-				  }else
-				  {
-					tblUltimasCompras.reload(ultimasComprasJSON);
-				  }
-				}
-			},
-			scroll: {
-				target: ".target",
-				enabled: false
-			},
-			navButtons: {
-				enabled: false
-			}			
-          }, function(err, data) {});
+            }],
+
+            search: {
+              enabled: true,
+              onlyEnterkey: true,
+              searchAreaStyle: 'col-md-5',
+              onSearch: function (res) {
+                var t = this.tableData;
+                if (res) {
+                  var data = ultimasComprasJSON;
+                  var search = data.filter(function (el) {
+                    return ((el.prd.toUpperCase().indexOf(res.toUpperCase()) >= 0) || (el.clifor.toUpperCase().indexOf(res.toUpperCase()) >= 0));
+                  });
+                  tblUltimasCompras.reload(search);
+                } else {
+                  tblUltimasCompras.reload(ultimasComprasJSON);
+                }
+              }
+            },
+            scroll: {
+              target: ".target",
+              enabled: false
+            },
+            navButtons: {
+              enabled: false
+            }
+          }, function (err, data) { });
 
         } else {
           $('#dvUltimaCmp').hide();
@@ -1341,4 +1337,5 @@
     }
   </script>
 </body>
+
 </html>

@@ -29,7 +29,7 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>Parcela de Contratos</processId>
-      <version>1</version>
+      <version>9</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>0</formId>
@@ -111,8 +111,8 @@
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
-      <engineAllocationId>Executor Atividade</engineAllocationId>
-      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;BaseActivity&gt;2&lt;/BaseActivity&gt;&lt;Returns&gt;Last&lt;/Returns&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <engineAllocationId>Usuário</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;User&gt;herickfreitas&lt;/User&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
@@ -163,8 +163,8 @@
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
-      <engineAllocationId>Campo Formulário</engineAllocationId>
-      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;FormField&gt;gestorcc&lt;/FormField&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <engineAllocationId>Usuário</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;User&gt;herickfreitas&lt;/User&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
@@ -215,8 +215,8 @@
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
-      <engineAllocationId>Campo Formulário</engineAllocationId>
-      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;FormField&gt;fiscalAprov&lt;/FormField&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <engineAllocationId>Usuário</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;User&gt;herickfreitas&lt;/User&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
@@ -497,10 +497,11 @@
         <version>1</version>
       </workflowProcessEventPK>
       <eventDescription>var SeqAtualizaWf = 116;&#xd;
+var SeqGestorCC = 145;&#xd;
 var SeqCancelaMov = 134;&#xd;
 var SeqFaturaMov = 22;&#xd;
 var SeqConcluiMov = 24;&#xd;
-var SeqGestorCC = 145;&#xd;
+&#xd;
 &#xd;
 function beforeStateEntry(sequenceId){&#xd;
 &#xd;
@@ -508,12 +509,12 @@ function beforeStateEntry(sequenceId){&#xd;
 	&#xd;
 	//Define Respons?vel&#xd;
     if (sequenceId == SeqAtualizaWf) {&#xd;
-    	atualizaEtapaWorkflow();&#xd;
+    	atualizaEtapaWorkflow(); &#xd;
     }  &#xd;
     else if (sequenceId == SeqGestorCC) {&#xd;
-    	atualizaSeqGestorCC();&#xd;
+    	 atualizaSeqGestorCC();&#xd;
     	anexaDocumentos();&#xd;
-    	preencheDescritor();&#xd;
+    	preencheDescritor(); &#xd;
     }  &#xd;
     else&#xd;
 	// De acordo com os estados finais ? passada a a??o a ser realizada no Movimento&#xd;
@@ -842,7 +843,7 @@ function anexaDocumentos(){&#xd;
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
         <propertyId>AutomaticTasks</propertyId>
-        <version>1</version>
+        <version>9</version>
       </advancedProcessPropertiesPK>
       <propertieValue>Campo</propertieValue>
     </AdvancedProcessProperties>
@@ -1004,7 +1005,7 @@ function anexaDocumentos(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
-        <version>1</version>
+        <version>9</version>
         <linkSequence>146</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1015,7 +1016,7 @@ function anexaDocumentos(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
-        <version>1</version>
+        <version>9</version>
         <linkSequence>160</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1026,7 +1027,7 @@ function anexaDocumentos(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
-        <version>1</version>
+        <version>9</version>
         <linkSequence>161</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1037,7 +1038,7 @@ function anexaDocumentos(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
-        <version>1</version>
+        <version>9</version>
         <linkSequence>161</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -1048,7 +1049,7 @@ function anexaDocumentos(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
-        <version>1</version>
+        <version>9</version>
         <linkSequence>162</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1059,7 +1060,7 @@ function anexaDocumentos(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
-        <version>1</version>
+        <version>9</version>
         <linkSequence>162</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -1073,7 +1074,7 @@ function anexaDocumentos(){&#xd;
       <extendedPropertyFieldPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
-        <version>1</version>
+        <version>9</version>
         <stateSequence>0</stateSequence>
         <propertyName>AutomaticTasks</propertyName>
       </extendedPropertyFieldPK>
@@ -1091,7 +1092,7 @@ function anexaDocumentos(){&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>ParcelaContratos</processId>
-      <processVersion>1</processVersion>
+      <processVersion>9</processVersion>
       <stateSequence>116</stateSequence>
       <appKey>approval</appKey>
       <appField>title</appField>
@@ -1101,7 +1102,7 @@ function anexaDocumentos(){&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>ParcelaContratos</processId>
-      <processVersion>1</processVersion>
+      <processVersion>9</processVersion>
       <stateSequence>116</stateSequence>
       <appKey>approval</appKey>
       <appField>description</appField>
@@ -1111,7 +1112,7 @@ function anexaDocumentos(){&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>ParcelaContratos</processId>
-      <processVersion>1</processVersion>
+      <processVersion>9</processVersion>
       <stateSequence>116</stateSequence>
       <appKey>approval</appKey>
       <appField>highlight</appField>
@@ -1121,7 +1122,7 @@ function anexaDocumentos(){&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>ParcelaContratos</processId>
-      <processVersion>1</processVersion>
+      <processVersion>9</processVersion>
       <stateSequence>116</stateSequence>
       <appKey>approval</appKey>
       <appField>approve</appField>
@@ -1131,7 +1132,7 @@ function anexaDocumentos(){&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>ParcelaContratos</processId>
-      <processVersion>1</processVersion>
+      <processVersion>9</processVersion>
       <stateSequence>116</stateSequence>
       <appKey>approval</appKey>
       <appField>reject</appField>
@@ -1141,7 +1142,7 @@ function anexaDocumentos(){&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>ParcelaContratos</processId>
-      <processVersion>1</processVersion>
+      <processVersion>9</processVersion>
       <stateSequence>145</stateSequence>
       <appKey>approval</appKey>
       <appField>title</appField>
@@ -1151,7 +1152,7 @@ function anexaDocumentos(){&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>ParcelaContratos</processId>
-      <processVersion>1</processVersion>
+      <processVersion>9</processVersion>
       <stateSequence>145</stateSequence>
       <appKey>approval</appKey>
       <appField>description</appField>
@@ -1161,7 +1162,7 @@ function anexaDocumentos(){&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>ParcelaContratos</processId>
-      <processVersion>1</processVersion>
+      <processVersion>9</processVersion>
       <stateSequence>145</stateSequence>
       <appKey>approval</appKey>
       <appField>highlight</appField>
@@ -1171,7 +1172,7 @@ function anexaDocumentos(){&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>ParcelaContratos</processId>
-      <processVersion>1</processVersion>
+      <processVersion>9</processVersion>
       <stateSequence>145</stateSequence>
       <appKey>approval</appKey>
       <appField>approve</appField>
@@ -1181,7 +1182,7 @@ function anexaDocumentos(){&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>ParcelaContratos</processId>
-      <processVersion>1</processVersion>
+      <processVersion>9</processVersion>
       <stateSequence>145</stateSequence>
       <appKey>approval</appKey>
       <appField>reject</appField>
@@ -1191,7 +1192,7 @@ function anexaDocumentos(){&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>ParcelaContratos</processId>
-      <processVersion>1</processVersion>
+      <processVersion>9</processVersion>
       <stateSequence>157</stateSequence>
       <appKey>approval</appKey>
       <appField>title</appField>
@@ -1201,7 +1202,7 @@ function anexaDocumentos(){&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>ParcelaContratos</processId>
-      <processVersion>1</processVersion>
+      <processVersion>9</processVersion>
       <stateSequence>157</stateSequence>
       <appKey>approval</appKey>
       <appField>description</appField>
@@ -1211,7 +1212,7 @@ function anexaDocumentos(){&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>ParcelaContratos</processId>
-      <processVersion>1</processVersion>
+      <processVersion>9</processVersion>
       <stateSequence>157</stateSequence>
       <appKey>approval</appKey>
       <appField>highlight</appField>
@@ -1221,7 +1222,7 @@ function anexaDocumentos(){&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>ParcelaContratos</processId>
-      <processVersion>1</processVersion>
+      <processVersion>9</processVersion>
       <stateSequence>157</stateSequence>
       <appKey>approval</appKey>
       <appField>approve</appField>
@@ -1231,7 +1232,7 @@ function anexaDocumentos(){&#xd;
       <id>0</id>
       <tenantId>0</tenantId>
       <processId>ParcelaContratos</processId>
-      <processVersion>1</processVersion>
+      <processVersion>9</processVersion>
       <stateSequence>157</stateSequence>
       <appKey>approval</appKey>
       <appField>reject</appField>

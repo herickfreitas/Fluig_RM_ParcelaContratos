@@ -1,8 +1,9 @@
-var SeqAtualizaWf = 116;
-var SeqCancelaMov = 134;
+
+var SeqAtualizaWf = 105;
+var SeqCancelaMov = 16;
 var SeqFaturaMov = 22;
 var SeqConcluiMov = 24;
-var SeqGestorCC = 145;
+var SeqGestorGSP = 55;
 
 function beforeStateEntry(sequenceId){
 
@@ -11,20 +12,21 @@ function beforeStateEntry(sequenceId){
 	//Define Respons?vel
     if (sequenceId == SeqAtualizaWf) {
     	atualizaEtapaWorkflow();
-    }  
-    else if (sequenceId == SeqGestorCC) {
-    	atualizaSeqGestorCC();
+    }
+    else if (sequenceId == SeqGestorGSP) {
+    	selecionaAutorizador();
     	anexaDocumentos();
     	preencheDescritor();
-    }  
-    else
-	// De acordo com os estados finais ? passada a a??o a ser realizada no Movimento
-    if (sequenceId == SeqCancelaMov)
-    	AtualizaMovimento("Cancela");
-	else if (sequenceId == SeqConcluiMov)
-		AtualizaMovimento("Conclui");
-	else if (sequenceId == SeqFaturaMov)
-		AtualizaMovimento("Fatura");   
+    }
+    else 
+		// De acordo com os estados finais ? passada a a??o a ser realizada no Movimento
+	    if (sequenceId == SeqCancelaMov)
+	    	AtualizaMovimento("Cancela");
+		else if (sequenceId == SeqConcluiMov)
+			AtualizaMovimento("Conclui");
+		else if (sequenceId == SeqFaturaMov)
+			AtualizaMovimento("Fatura");
+	    
 }
 
 function AtualizaMovimento(acaoMovimento){
@@ -65,103 +67,37 @@ function AtualizaMovimento(acaoMovimento){
 	}	
 }
 
-function atualizaEtapaWorkflow(){
+
+function selecionaAutorizador(){
 	try {
 		
-		log.info("==========[ atualizaEtapaWorkflow ENTROU ]==========");
-		
-		var processo = getValue("WKNumProces");     //Recupera o numero da solicitação
-		var requisitante = getValue("WKUser");		//Recupera o usuário corrente associado a atividade
-		
-		// Gravando valores no formulário
-		hAPI.setCardValue("n_solicitacao", processo);
-	    hAPI.setCardValue("solicitante", requisitante);
-	    
-	    // Coletando variáveis para consulta de dataSet
-	    var id_mov = hAPI.getCardValue("IdMov");
-	    var codcoligada = 1;
-	    
-	    // Array com varáveis coletadas
-	    var fields = new Array(codcoligada, id_mov, processo);
-	    //log.info("==========[ atualizaEtapaWorkflow fields ]=========="+fields);
-	    
-	    // Chamada do dataset
-	    var dsNucleus = DatasetFactory.getDataset('wsDatasetNucleus', fields, null, null);
-	    //log.info("==========[ atualizaEtapaWorkflow dsNucleus ]=========="+dsNucleus);
-	    
-	    // Coletando XML do retorno
-	    var retorno = dsNucleus.getValue(0, "XML");
-		//log.info("==========[ atualizaEtapaWorkflow retorno ]========== " + retorno);
-        
-		// Ajustando retorno XML para retirada de elemento
-        var factory = javax.xml.parsers.DocumentBuilderFactory.newInstance();
-        var parser = factory.newDocumentBuilder();
-        var source = new org.xml.sax.InputSource(new java.io.StringReader(retorno));
-        var xmlResponse = parser.parse(source);
-        
-        // 1º Retirando o elemento 2º Retirando o conteúdo
-        var nodes = xmlResponse.getElementsByTagName("CODCCUSTO");
-        var ccusto = nodes.item(0).getTextContent();
-        //log.info("==========[ atualizaEtapaWorkflow nodes CODCCUSTO ]========== " + nodes.item(0).getTextContent());
- 
-        // Rodando novo dataset para coletar responsável do centro de custo
-        var c1 = DatasetFactory.createConstraint("CODCCUSTO", ccusto, ccusto, ConstraintType.MUST);
-        var constraints = new Array(c1);
-        //log.info("==========[ atualizaEtapaWorkflow constraints ]========== " + constraints);
-        
-        // Executando chamada de dataset
-        var datasetReturned = DatasetFactory.getDataset("_RM_GESTOR_CENTRO_CUSTO", null, constraints, null);
-        
-		// Retirando o campo do resultado
-		var chefe = datasetReturned.getValue(0, "RESPONSAVEL");
-		//log.info("==========[ atualizaEtapaWorkflow createDataset chefe ]========== " + chefe);        
-        
-        // Gravando retorno no formulário		
-		hAPI.setCardValue("gestorcc", chefe);
-		
-		    	
-		
-		}
-	
-	catch (e)
-	{
-		log.error(e);
-		throw e;
-	}
-}
-
-
-
-function atualizaSeqGestorCC() {
-	try {
-		
-
-		log.info("==========[ atualizaSeqGestorCC Entrou ]========== " );
+		log.info("==========[ selecionaAutorizador Entrou ]========== " );
 		
 	  	/////////////////////////////////////////////
 	  	//		COLETANDO INFORMAÇÕES DE TMOV  	   //
 	  	/////////////////////////////////////////////
 		
 		var idMov = hAPI.getCardValue("IdMov");
-		log.info("==========[ atualizaSeqGestorCC idMov ]========== " + idMov);
+		log.info("==========[ selecionaAutorizador idMov ]========== " + idMov);
 		
 		// Preparacao de filtro para consulta
 		var i1 = DatasetFactory.createConstraint("IDMOV", idMov, idMov, ConstraintType.MUST);
 		var constraints = new Array(i1);
-		log.info("==========[ atualizaSeqGestorCC constraints idMov ]========== " + constraints);
+		log.info("==========[ selecionaAutorizador constraints idMov ]========== " + constraints);
 		
 		var datasetReturned = DatasetFactory.getDataset("_RM_TMOV", null, constraints, null);
-		log.info("==========[ atualizaSeqGestorCC  datasetReturned _RM_TMOV]========== " + datasetReturned);
+		log.info("==========[ selecionaAutorizador  datasetReturned _RM_TMOV]========== " + datasetReturned);
 		
 		// Retirando o campo do resultado
         var codfilial = datasetReturned.getValue(0, "CODFILIAL");
-        log.info("==========[ atualizaSeqGestorCC codfilial ]========== " + codfilial);		
+        log.info("==========[ selecionaAutorizador codfilial ]========== " + codfilial);		
 		
         		
 	  	/////////////////////////////////////////////
-	  	//		ATRIBUINDO GRUPO ANALISE FISCAL	   //
+	  	//		ATRIBUINDO GRUPO AUTORIZADOR 	   //
 	  	/////////////////////////////////////////////
-
+		
+		
         if (codfilial == "1") {
         	var fiscalAprov = "Pool:Group:w_AnaFiscais_BSB";
         }
@@ -169,21 +105,19 @@ function atualizaSeqGestorCC() {
         	var fiscalAprov = "Pool:Group:w_AnaFiscais_RIO";
         }
         
-        log.info("==========[ atualizaSeqGestorCC fiscalAprov ]========== " + fiscalAprov);	
-        
+        log.info("==========[ selecionaAutorizador fiscalAprov ]========== " + fiscalAprov);	
+        	
         hAPI.setCardValue("fiscalAprov", fiscalAprov);
-        
+    	
+		
 	}
 	
-	catch (e)
-	{
+	catch (e) {
 		log.error(e);
 		throw e;
-		}
+	}
 	
-}
-
-
+} 
 
 
 function preencheDescritor(){
@@ -208,7 +142,7 @@ function preencheDescritor(){
 		
 		// Retirando o campo do resultado
         var descritor = datasetReturned.getValue(0, "DESCRITOR");
-        log.info("==========[ preencheDescritor ]========== " + descritor);		
+        log.info("==========[ preencheDescritor codfilial ]========== " + descritor);		
 		
 	  	/////////////////////////////////////////////
 	  	//			ATRIBUINDO NO FORMULARIO       //
@@ -225,7 +159,6 @@ function preencheDescritor(){
 	}
 	
 } 
-
 
 
 function anexaDocumentos(){
@@ -328,6 +261,95 @@ function anexaDocumentos(){
 			
 			}		
 	}
+	
+	catch (e)
+	{
+		log.error(e);
+		throw e;
+	}
+}
+
+
+function atualizaEtapaWorkflow(){
+	try {
+		
+		log.info("==========[ atualizaEtapaWorkflow ENTROU ]==========");
+		
+		var processo = getValue("WKNumProces");     //Recupera o numero da solicitação
+		var requisitante = getValue("WKUser");		//Recupera o usuário corrente associado a atividade
+			
+		hAPI.setCardValue("n_solicitacao", processo);
+		hAPI.setCardValue("solicitante", requisitante);
+		    
+		// Preparacao de filtro para consulta
+		var c1 = DatasetFactory.createConstraint("SOLICITANTE", requisitante, requisitante, ConstraintType.MUST);
+		var constraints = new Array(c1);
+		log.info("==========[ atualizaEtapaWorkflow createDataset constraints ]========== " + constraints);
+			    
+		// coleta dados do dataset, utlizando filtro
+		var datasetReturned = DatasetFactory.getDataset("_RM_SOLICITANTE_CHEFIA", null, constraints, null);
+		log.info("==========[ atualizaEtapaWorkflow createDataset datasetReturned ] ========== " + datasetReturned);	  
+			    
+		// Gravando valores de retorno
+		var retorno = datasetReturned.values;
+		log.info("==========[ atualizaEtapaWorkflow createDataset dataset ]========== " + retorno);
+			
+		// Retirando o campo do resultado
+		var chefe = datasetReturned.getValue(0, "CHEFIA");
+		log.info("==========[ atualizaEtapaWorkflow createDataset chefe ]========== " + chefe);
+			
+		// Gravando retorno		
+		hAPI.setCardValue("chefia", chefe);
+		
+		
+		////////////////////////////////
+		// GESTOR DE CENTRO DE CUSTOS //
+		////////////////////////////////
+		
+		 // Coletando variáveis para consulta de dataSet
+	    var id_mov = hAPI.getCardValue("IdMov");
+	    var codcoligada = 1;
+	    
+	    // Array com varáveis coletadas
+	    var fields = new Array(codcoligada, id_mov, processo);
+	    //log.info("==========[ atualizaEtapaWorkflow fields ]=========="+fields);
+	    
+	    // Chamada do dataset
+	    var dsNucleus = DatasetFactory.getDataset('wsDatasetNucleus', fields, null, null);
+	    //log.info("==========[ atualizaEtapaWorkflow dsNucleus ]=========="+dsNucleus);
+	    
+	    // Coletando XML do retorno
+	    var retorno = dsNucleus.getValue(0, "XML");
+		//log.info("==========[ atualizaEtapaWorkflow retorno ]========== " + retorno);
+        
+		// Ajustando retorno XML para retirada de elemento
+        var factory = javax.xml.parsers.DocumentBuilderFactory.newInstance();
+        var parser = factory.newDocumentBuilder();
+        var source = new org.xml.sax.InputSource(new java.io.StringReader(retorno));
+        var xmlResponse = parser.parse(source);
+        
+        // 1º Retirando o elemento 2º Retirando o conteúdo
+        var nodes = xmlResponse.getElementsByTagName("CODCCUSTO");
+        var ccusto = nodes.item(0).getTextContent();
+        //log.info("==========[ atualizaEtapaWorkflow nodes CODCCUSTO ]========== " + nodes.item(0).getTextContent());
+ 
+        // Rodando novo dataset para coletar responsável do centro de custo
+        var c1 = DatasetFactory.createConstraint("CODCCUSTO", ccusto, ccusto, ConstraintType.MUST);
+        var constraints = new Array(c1);
+        log.info("==========[ atualizaEtapaWorkflow constraints ]========== " + constraints);
+        
+        // Executando chamada de dataset
+        var datasetReturned = DatasetFactory.getDataset("_RM_GESTOR_CENTRO_CUSTO", null, constraints, null);
+        
+		// Retirando o campo do resultado
+		var gestorcc = datasetReturned.getValue(0, "RESPONSAVEL");
+		log.info("==========[ atualizaEtapaWorkflow createDataset gestorcc ]========== " + gestorcc);        
+        
+        // Gravando retorno no formulário		
+		hAPI.setCardValue("gestorcc", gestorcc);
+		
+		
+		}
 	
 	catch (e)
 	{
