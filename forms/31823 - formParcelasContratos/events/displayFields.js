@@ -13,4 +13,29 @@ function displayFields(form,customHTML){
 
 	form.setShowDisabledFields(true);
 	form.setHidePrintLink(true);
+	
+	
+	
+	/* Tratamento da div para seleção do ponto focal */
+	
+	var activity = getValue('WKNumState');
+	var gestorCCusto = 55;
+	
+	customHTML.append("<script>");
+	customHTML.append("$(document).ready(function(){ "); 
+	
+	
+	if (activity != gestorCCusto)  {
+		
+		customHTML.append("$('#dvGestorCentroCusto').hide();");
+	}
+	
+	else {
+		
+		customHTML.append("$('#dvGestorCentroCusto').show();");
+
+	}
+	
+	customHTML.append(" });");
+	customHTML.append("</script>");
 }

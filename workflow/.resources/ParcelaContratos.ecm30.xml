@@ -4,19 +4,19 @@
       <companyId>1</companyId>
       <processId>ParcelaContratos</processId>
     </processDefinitionPK>
-    <processDescription>Parcela de Contratos</processDescription>
+    <processDescription>Solicitações de Parcelas de Contrato</processDescription>
     <instruction></instruction>
     <active>true</active>
-    <publicProcess>false</publicProcess>
+    <publicProcess>true</publicProcess>
     <volumeId>Default</volumeId>
-    <categoryId>Integrações.Contratos</categoryId>
+    <categoryId>Integrações.Compras</categoryId>
     <managerEngineAllocationId>Grupo</managerEngineAllocationId>
     <managerEngineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;w_COMPRADORES&lt;/Group&gt;&lt;/AssignmentController&gt;</managerEngineAllocationConfiguration>
     <snapshotFrequency>0</snapshotFrequency>
     <baseDay>0</baseDay>
     <baseMonth>0</baseMonth>
-    <periodId>Expediente_CNC_10as19</periodId>
-    <uniqueCardVersion>true</uniqueCardVersion>
+    <periodId>Default</periodId>
+    <uniqueCardVersion>false</uniqueCardVersion>
     <keyWord></keyWord>
     <complementsLevel>0</complementsLevel>
     <notifyRequisitionerComplements>false</notifyRequisitionerComplements>
@@ -28,8 +28,8 @@
   <ProcessDefinitionVersion>
     <processDefinitionVersionPK>
       <companyId>1</companyId>
-      <processId>Parcela de Contratos</processId>
-      <version>9</version>
+      <processId>Solicitações de Parcelas de Contrato</processId>
+      <version>20</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>0</formId>
@@ -40,7 +40,7 @@
     <blockedVersion>false</blockedVersion>
     <counterSign>false</counterSign>
     <openInstances>0</openInstances>
-    <bpmnVersion>2</bpmnVersion>
+    <bpmnVersion>1</bpmnVersion>
     <processStates/>
     <favorito>false</favorito>
     <inheritFormSecurity>false</inheritFormSecurity>
@@ -60,8 +60,8 @@
       <deadlineTime>0</deadlineTime>
       <joint>true</joint>
       <agreementPercentage>0</agreementPercentage>
-      <engineAllocationId>Grupo</engineAllocationId>
-      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;Interno&lt;/Group&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <engineAllocationId></engineAllocationId>
+      <engineAllocationConfiguration></engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>true</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
@@ -76,8 +76,8 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>200</positionX>
-      <positionY>21</positionY>
+      <positionX>12</positionX>
+      <positionY>0</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -85,7 +85,7 @@
       <allowanceManagerTime>0</allowanceManagerTime>
       <frequenceManagerTime>0</frequenceManagerTime>
       <inhibitTransfer>false</inhibitTransfer>
-      <periodId>Expediente_CNC_10as19</periodId>
+      <periodId></periodId>
       <stateType>0</stateType>
       <bpmnType>10</bpmnType>
       <signalId>0</signalId>
@@ -102,23 +102,23 @@
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
         <version>1</version>
-        <sequence>116</sequence>
+        <sequence>12</sequence>
       </processStatePK>
-      <stateName>Processamento da solicitação</stateName>
-      <stateDescription>Processamento da solicitação</stateDescription>
+      <stateName>Solicitante - Tratar Solicitação</stateName>
+      <stateDescription>Solicitante - Tratar Solicitação</stateDescription>
       <instruction></instruction>
-      <deadlineTime>7200</deadlineTime>
+      <deadlineTime>0</deadlineTime>
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
-      <engineAllocationId>Usuário</engineAllocationId>
-      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;User&gt;herickfreitas&lt;/User&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <engineAllocationId>Campo Formulário</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;FormField&gt;solicitante&lt;/FormField&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
       <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
       <allowanceAuthorityTime>3600</allowanceAuthorityTime>
-      <frequenceAuthorityTime>1800</frequenceAuthorityTime>
+      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
       <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
       <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
       <transferAttachments>false</transferAttachments>
@@ -127,8 +127,8 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>360</positionX>
-      <positionY>15</positionY>
+      <positionX>720</positionX>
+      <positionY>50</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -154,17 +154,17 @@
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
         <version>1</version>
-        <sequence>145</sequence>
+        <sequence>36</sequence>
       </processStatePK>
-      <stateName>Gestor Centro de Custos - Aprovar solicitação</stateName>
-      <stateDescription>Gestor Centro de Custos - Aprovar solicitação</stateDescription>
+      <stateName>Aprovado - Encaminhar Fiscal</stateName>
+      <stateDescription>Aprovado - Encaminhar Fiscal</stateDescription>
       <instruction></instruction>
-      <deadlineTime>7200</deadlineTime>
+      <deadlineTime>32400</deadlineTime>
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
-      <engineAllocationId>Usuário</engineAllocationId>
-      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;User&gt;herickfreitas&lt;/User&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <engineAllocationId>Campo Formulário</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;FormField&gt;fiscalAprov&lt;/FormField&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
@@ -180,7 +180,7 @@
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
       <positionX>90</positionX>
-      <positionY>120</positionY>
+      <positionY>320</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -206,17 +206,17 @@
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
         <version>1</version>
-        <sequence>157</sequence>
+        <sequence>55</sequence>
       </processStatePK>
-      <stateName>Aprovado - Analisar Fiscal</stateName>
-      <stateDescription>Aprovado - Analisar Fiscal</stateDescription>
+      <stateName>Gestor Centro de Custo - Direcionar Solicitação</stateName>
+      <stateDescription>Gestor Centro de Custo - Direcionar Solicitação</stateDescription>
       <instruction></instruction>
-      <deadlineTime>7200</deadlineTime>
+      <deadlineTime>0</deadlineTime>
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
-      <engineAllocationId>Usuário</engineAllocationId>
-      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;User&gt;herickfreitas&lt;/User&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <engineAllocationId>Campo Formulário</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;FormField&gt;gestorcc&lt;/FormField&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
       <selectColleague>1</selectColleague>
       <initialState>false</initialState>
       <notifyAuthorityDelay>true</notifyAuthorityDelay>
@@ -231,8 +231,164 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>260</positionX>
-      <positionY>271</positionY>
+      <positionX>480</positionX>
+      <positionY>51</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>true</inhibitTransfer>
+      <periodId>Expediente_CNC_10as19</periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>0</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>ParcelaContratos</processId>
+        <version>1</version>
+        <sequence>105</sequence>
+      </processStatePK>
+      <stateName>Solicitante - Anexar Documento</stateName>
+      <stateDescription>Solicitante - Anexar Documento</stateDescription>
+      <instruction></instruction>
+      <deadlineTime>1200</deadlineTime>
+      <deadlineFieldName></deadlineFieldName>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Executor Atividade</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;BaseActivity&gt;2&lt;/BaseActivity&gt;&lt;Returns&gt;Last&lt;/Returns&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>36000</allowanceAuthorityTime>
+      <frequenceAuthorityTime>36000</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>100</positionX>
+      <positionY>60</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>true</inhibitTransfer>
+      <periodId>Expediente_CNC_10as19</periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>0</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>ParcelaContratos</processId>
+        <version>1</version>
+        <sequence>116</sequence>
+      </processStatePK>
+      <stateName>Ponto Focal - Analisar documento</stateName>
+      <stateDescription>Ponto Focal - Analisar documento</stateDescription>
+      <instruction></instruction>
+      <deadlineTime>7200</deadlineTime>
+      <deadlineFieldName></deadlineFieldName>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Campo Formulário</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;FormField&gt;pontoFocal&lt;/FormField&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
+      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>480</positionX>
+      <positionY>183</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>false</inhibitTransfer>
+      <periodId>Expediente_CNC_10as19</periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>0</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>ParcelaContratos</processId>
+        <version>1</version>
+        <sequence>118</sequence>
+      </processStatePK>
+      <stateName>Gestor Centro de Custo - Validar Solicitação</stateName>
+      <stateDescription>Gestor Centro de Custo - Validar Solicitação</stateDescription>
+      <instruction></instruction>
+      <deadlineTime>0</deadlineTime>
+      <deadlineFieldName></deadlineFieldName>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Campo Formulário</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;FormField&gt;gestorcc&lt;/FormField&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
+      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>320</positionX>
+      <positionY>180</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -280,10 +436,10 @@
       <subProcessId></subProcessId>
       <formFolder>0</formFolder>
       <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
-      <notifyRequisitionerFollowUp>true</notifyRequisitionerFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>170</positionX>
-      <positionY>408</positionY>
+      <positionX>220</positionX>
+      <positionY>478</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -305,10 +461,10 @@
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
         <version>1</version>
-        <sequence>134</sequence>
+        <sequence>16</sequence>
       </processStatePK>
-      <stateName>Reprovar</stateName>
-      <stateDescription>Reprovar</stateDescription>
+      <stateName>Reprovar e Cancelar Movimento</stateName>
+      <stateDescription>Reprovar e Cancelar Movimento</stateDescription>
       <instruction>Atividade final do processo</instruction>
       <deadlineTime>0</deadlineTime>
       <joint>false</joint>
@@ -327,10 +483,10 @@
       <subProcessId></subProcessId>
       <formFolder>0</formFolder>
       <notifyAuthorityFollowUp>false</notifyAuthorityFollowUp>
-      <notifyRequisitionerFollowUp>true</notifyRequisitionerFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>420</positionX>
-      <positionY>408</positionY>
+      <positionX>810</positionX>
+      <positionY>478</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -340,7 +496,7 @@
       <inhibitTransfer>false</inhibitTransfer>
       <periodId></periodId>
       <stateType>6</stateType>
-      <bpmnType>65</bpmnType>
+      <bpmnType>60</bpmnType>
       <signalId>0</signalId>
       <counterSign>false</counterSign>
       <openInstances>0</openInstances>
@@ -355,12 +511,29 @@
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
         <version>1</version>
-        <linkSequence>105</linkSequence>
+        <linkSequence>50</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>12</initialStateSequence>
+      <finalStateSequence>55</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>ParcelaContratos</processId>
+        <version>1</version>
+        <linkSequence>57</linkSequence>
       </processLinkPK>
       <actionLabel></actionLabel>
       <returnPermited>false</returnPermited>
       <initialStateSequence>2</initialStateSequence>
-      <finalStateSequence>116</finalStateSequence>
+      <finalStateSequence>105</finalStateSequence>
       <returnLabel></returnLabel>
       <name></name>
       <automaticLink>false</automaticLink>
@@ -372,46 +545,32 @@
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
         <version>1</version>
-        <linkSequence>146</linkSequence>
+        <linkSequence>58</linkSequence>
       </processLinkPK>
       <actionLabel></actionLabel>
       <returnPermited>false</returnPermited>
-      <initialStateSequence>116</initialStateSequence>
-      <finalStateSequence>145</finalStateSequence>
-      <returnLabel></returnLabel>
-      <name></name>
-      <automaticLink>false</automaticLink>
-      <defaultLink>false</defaultLink>
-      <type>0</type>
-    </ProcessLink>
-    <ProcessLink>
-      <processLinkPK>
-        <companyId>1</companyId>
-        <processId>ParcelaContratos</processId>
-        <version>1</version>
-        <linkSequence>156</linkSequence>
-      </processLinkPK>
-      <actionLabel></actionLabel>
-      <returnPermited>false</returnPermited>
-      <initialStateSequence>116</initialStateSequence>
-      <finalStateSequence>145</finalStateSequence>
+      <initialStateSequence>105</initialStateSequence>
+      <finalStateSequence>55</finalStateSequence>
       <returnLabel></returnLabel>
       <name></name>
       <automaticLink>true</automaticLink>
       <defaultLink>false</defaultLink>
       <type>0</type>
+      <movementTitle></movementTitle>
+      <movementDescription></movementDescription>
+      <movementAccessLinkDescription></movementAccessLinkDescription>
     </ProcessLink>
     <ProcessLink>
       <processLinkPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
         <version>1</version>
-        <linkSequence>158</linkSequence>
+        <linkSequence>59</linkSequence>
       </processLinkPK>
       <actionLabel></actionLabel>
       <returnPermited>false</returnPermited>
-      <initialStateSequence>145</initialStateSequence>
-      <finalStateSequence>157</finalStateSequence>
+      <initialStateSequence>105</initialStateSequence>
+      <finalStateSequence>55</finalStateSequence>
       <returnLabel></returnLabel>
       <name></name>
       <automaticLink>false</automaticLink>
@@ -423,11 +582,28 @@
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
         <version>1</version>
-        <linkSequence>159</linkSequence>
+        <linkSequence>113</linkSequence>
       </processLinkPK>
       <actionLabel></actionLabel>
       <returnPermited>false</returnPermited>
-      <initialStateSequence>157</initialStateSequence>
+      <initialStateSequence>12</initialStateSequence>
+      <finalStateSequence>16</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>ParcelaContratos</processId>
+        <version>1</version>
+        <linkSequence>114</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>36</initialStateSequence>
       <finalStateSequence>8</finalStateSequence>
       <returnLabel></returnLabel>
       <name></name>
@@ -440,11 +616,28 @@
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
         <version>1</version>
-        <linkSequence>160</linkSequence>
+        <linkSequence>115</linkSequence>
       </processLinkPK>
       <actionLabel></actionLabel>
       <returnPermited>false</returnPermited>
-      <initialStateSequence>157</initialStateSequence>
+      <initialStateSequence>36</initialStateSequence>
+      <finalStateSequence>12</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>ParcelaContratos</processId>
+        <version>1</version>
+        <linkSequence>117</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>55</initialStateSequence>
       <finalStateSequence>116</finalStateSequence>
       <returnLabel></returnLabel>
       <name></name>
@@ -457,12 +650,12 @@
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
         <version>1</version>
-        <linkSequence>161</linkSequence>
+        <linkSequence>119</linkSequence>
       </processLinkPK>
       <actionLabel></actionLabel>
       <returnPermited>false</returnPermited>
       <initialStateSequence>116</initialStateSequence>
-      <finalStateSequence>134</finalStateSequence>
+      <finalStateSequence>118</finalStateSequence>
       <returnLabel></returnLabel>
       <name></name>
       <automaticLink>false</automaticLink>
@@ -474,14 +667,31 @@
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
         <version>1</version>
-        <linkSequence>162</linkSequence>
+        <linkSequence>120</linkSequence>
       </processLinkPK>
       <actionLabel></actionLabel>
       <returnPermited>false</returnPermited>
-      <initialStateSequence>145</initialStateSequence>
-      <finalStateSequence>116</finalStateSequence>
+      <initialStateSequence>118</initialStateSequence>
+      <finalStateSequence>36</finalStateSequence>
       <returnLabel></returnLabel>
-      <name>Reprovando parcela de contrato</name>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>ParcelaContratos</processId>
+        <version>1</version>
+        <linkSequence>121</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>118</initialStateSequence>
+      <finalStateSequence>12</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
       <automaticLink>false</automaticLink>
       <defaultLink>false</defaultLink>
       <type>0</type>
@@ -492,16 +702,36 @@
     <WorkflowProcessEvent>
       <workflowProcessEventPK>
         <companyId>1</companyId>
+        <eventId>beforeTaskSave</eventId>
+        <processId>ParcelaContratos</processId>
+        <version>1</version>
+      </workflowProcessEventPK>
+      <eventDescription>function beforeTaskSave(colleagueId,nextSequenceId,userList){&#xd;
+	&#xd;
+    var atividade  = getValue(&quot;WKNumState&quot;);&#xd;
+    var comentario = getValue(&quot;WKUserComment&quot;); &#xd;
+&#xd;
+    if (atividade == 36) {&#xd;
+        if (comentario == &quot;&quot;) {&#xd;
+            throw &quot;Obrigatório informar um Complemento.&quot;&#xd;
+        }&#xd;
+    }&#xd;
+	&#xd;
+}</eventDescription>
+    </WorkflowProcessEvent>
+    <WorkflowProcessEvent>
+      <workflowProcessEventPK>
+        <companyId>1</companyId>
         <eventId>beforeStateEntry</eventId>
         <processId>ParcelaContratos</processId>
         <version>1</version>
       </workflowProcessEventPK>
-      <eventDescription>var SeqAtualizaWf = 116;&#xd;
-var SeqGestorCC = 145;&#xd;
-var SeqCancelaMov = 134;&#xd;
+      <eventDescription>&#xd;
+var SeqAtualizaWf = 105;&#xd;
+var SeqCancelaMov = 16;&#xd;
 var SeqFaturaMov = 22;&#xd;
 var SeqConcluiMov = 24;&#xd;
-&#xd;
+var SeqGestorGSP = 55;&#xd;
 &#xd;
 function beforeStateEntry(sequenceId){&#xd;
 &#xd;
@@ -509,21 +739,22 @@ function beforeStateEntry(sequenceId){&#xd;
 	&#xd;
 	//Define Respons?vel&#xd;
     if (sequenceId == SeqAtualizaWf) {&#xd;
-    	atualizaEtapaWorkflow(); &#xd;
-    }  &#xd;
-    else if (sequenceId == SeqGestorCC) {&#xd;
-    	 atualizaSeqGestorCC();&#xd;
+    	atualizaEtapaWorkflow();&#xd;
+    }&#xd;
+    else if (sequenceId == SeqGestorGSP) {&#xd;
+    	selecionaAutorizador();&#xd;
     	anexaDocumentos();&#xd;
-    	preencheDescritor(); &#xd;
-    }  &#xd;
-    else&#xd;
-	// De acordo com os estados finais ? passada a a??o a ser realizada no Movimento&#xd;
-    if (sequenceId == SeqCancelaMov)&#xd;
-    	AtualizaMovimento(&quot;Cancela&quot;);&#xd;
-	else if (sequenceId == SeqConcluiMov)&#xd;
-		AtualizaMovimento(&quot;Conclui&quot;);&#xd;
-	else if (sequenceId == SeqFaturaMov)&#xd;
-		AtualizaMovimento(&quot;Fatura&quot;);   &#xd;
+    	preencheDescritor();&#xd;
+    }&#xd;
+    else &#xd;
+		// De acordo com os estados finais ? passada a a??o a ser realizada no Movimento&#xd;
+	    if (sequenceId == SeqCancelaMov)&#xd;
+	    	AtualizaMovimento(&quot;Cancela&quot;);&#xd;
+		else if (sequenceId == SeqConcluiMov)&#xd;
+			AtualizaMovimento(&quot;Conclui&quot;);&#xd;
+		else if (sequenceId == SeqFaturaMov)&#xd;
+			AtualizaMovimento(&quot;Fatura&quot;);&#xd;
+	    &#xd;
 }&#xd;
 &#xd;
 function AtualizaMovimento(acaoMovimento){&#xd;
@@ -564,103 +795,37 @@ function AtualizaMovimento(acaoMovimento){&#xd;
 	}	&#xd;
 }&#xd;
 &#xd;
-function atualizaEtapaWorkflow(){&#xd;
+&#xd;
+function selecionaAutorizador(){&#xd;
 	try {&#xd;
 		&#xd;
-		log.info(&quot;==========[ atualizaEtapaWorkflow ENTROU ]==========&quot;);&#xd;
-		&#xd;
-		var processo = getValue(&quot;WKNumProces&quot;);     //Recupera o numero da solicitação&#xd;
-		var requisitante = getValue(&quot;WKUser&quot;);		//Recupera o usuário corrente associado a atividade&#xd;
-		&#xd;
-		// Gravando valores no formulário&#xd;
-		hAPI.setCardValue(&quot;n_solicitacao&quot;, processo);&#xd;
-	    hAPI.setCardValue(&quot;solicitante&quot;, requisitante);&#xd;
-	    &#xd;
-	    // Coletando variáveis para consulta de dataSet&#xd;
-	    var id_mov = hAPI.getCardValue(&quot;IdMov&quot;);&#xd;
-	    var codcoligada = 1;&#xd;
-	    &#xd;
-	    // Array com varáveis coletadas&#xd;
-	    var fields = new Array(codcoligada, id_mov, processo);&#xd;
-	    //log.info(&quot;==========[ atualizaEtapaWorkflow fields ]==========&quot;+fields);&#xd;
-	    &#xd;
-	    // Chamada do dataset&#xd;
-	    var dsNucleus = DatasetFactory.getDataset(&apos;wsDatasetNucleus&apos;, fields, null, null);&#xd;
-	    //log.info(&quot;==========[ atualizaEtapaWorkflow dsNucleus ]==========&quot;+dsNucleus);&#xd;
-	    &#xd;
-	    // Coletando XML do retorno&#xd;
-	    var retorno = dsNucleus.getValue(0, &quot;XML&quot;);&#xd;
-		//log.info(&quot;==========[ atualizaEtapaWorkflow retorno ]========== &quot; + retorno);&#xd;
-        &#xd;
-		// Ajustando retorno XML para retirada de elemento&#xd;
-        var factory = javax.xml.parsers.DocumentBuilderFactory.newInstance();&#xd;
-        var parser = factory.newDocumentBuilder();&#xd;
-        var source = new org.xml.sax.InputSource(new java.io.StringReader(retorno));&#xd;
-        var xmlResponse = parser.parse(source);&#xd;
-        &#xd;
-        // 1º Retirando o elemento 2º Retirando o conteúdo&#xd;
-        var nodes = xmlResponse.getElementsByTagName(&quot;CODCCUSTO&quot;);&#xd;
-        var ccusto = nodes.item(0).getTextContent();&#xd;
-        //log.info(&quot;==========[ atualizaEtapaWorkflow nodes CODCCUSTO ]========== &quot; + nodes.item(0).getTextContent());&#xd;
- &#xd;
-        // Rodando novo dataset para coletar responsável do centro de custo&#xd;
-        var c1 = DatasetFactory.createConstraint(&quot;CODCCUSTO&quot;, ccusto, ccusto, ConstraintType.MUST);&#xd;
-        var constraints = new Array(c1);&#xd;
-        //log.info(&quot;==========[ atualizaEtapaWorkflow constraints ]========== &quot; + constraints);&#xd;
-        &#xd;
-        // Executando chamada de dataset&#xd;
-        var datasetReturned = DatasetFactory.getDataset(&quot;_RM_GESTOR_CENTRO_CUSTO&quot;, null, constraints, null);&#xd;
-        &#xd;
-		// Retirando o campo do resultado&#xd;
-		var chefe = datasetReturned.getValue(0, &quot;RESPONSAVEL&quot;);&#xd;
-		//log.info(&quot;==========[ atualizaEtapaWorkflow createDataset chefe ]========== &quot; + chefe);        &#xd;
-        &#xd;
-        // Gravando retorno no formulário		&#xd;
-		hAPI.setCardValue(&quot;gestorcc&quot;, chefe);&#xd;
-		&#xd;
-		    	&#xd;
-		&#xd;
-		}&#xd;
-	&#xd;
-	catch (e)&#xd;
-	{&#xd;
-		log.error(e);&#xd;
-		throw e;&#xd;
-	}&#xd;
-}&#xd;
-&#xd;
-&#xd;
-&#xd;
-function atualizaSeqGestorCC() {&#xd;
-	try {&#xd;
-		&#xd;
-&#xd;
-		log.info(&quot;==========[ atualizaSeqGestorCC Entrou ]========== &quot; );&#xd;
+		log.info(&quot;==========[ selecionaAutorizador Entrou ]========== &quot; );&#xd;
 		&#xd;
 	  	/////////////////////////////////////////////&#xd;
 	  	//		COLETANDO INFORMAÇÕES DE TMOV  	   //&#xd;
 	  	/////////////////////////////////////////////&#xd;
 		&#xd;
 		var idMov = hAPI.getCardValue(&quot;IdMov&quot;);&#xd;
-		log.info(&quot;==========[ atualizaSeqGestorCC idMov ]========== &quot; + idMov);&#xd;
+		log.info(&quot;==========[ selecionaAutorizador idMov ]========== &quot; + idMov);&#xd;
 		&#xd;
 		// Preparacao de filtro para consulta&#xd;
 		var i1 = DatasetFactory.createConstraint(&quot;IDMOV&quot;, idMov, idMov, ConstraintType.MUST);&#xd;
 		var constraints = new Array(i1);&#xd;
-		log.info(&quot;==========[ atualizaSeqGestorCC constraints idMov ]========== &quot; + constraints);&#xd;
+		log.info(&quot;==========[ selecionaAutorizador constraints idMov ]========== &quot; + constraints);&#xd;
 		&#xd;
 		var datasetReturned = DatasetFactory.getDataset(&quot;_RM_TMOV&quot;, null, constraints, null);&#xd;
-		log.info(&quot;==========[ atualizaSeqGestorCC  datasetReturned _RM_TMOV]========== &quot; + datasetReturned);&#xd;
+		log.info(&quot;==========[ selecionaAutorizador  datasetReturned _RM_TMOV]========== &quot; + datasetReturned);&#xd;
 		&#xd;
 		// Retirando o campo do resultado&#xd;
         var codfilial = datasetReturned.getValue(0, &quot;CODFILIAL&quot;);&#xd;
-        log.info(&quot;==========[ atualizaSeqGestorCC codfilial ]========== &quot; + codfilial);		&#xd;
+        log.info(&quot;==========[ selecionaAutorizador codfilial ]========== &quot; + codfilial);		&#xd;
 		&#xd;
         		&#xd;
 	  	/////////////////////////////////////////////&#xd;
-	  	//		ATRIBUINDO GRUPO ANALISE FISCAL	   //&#xd;
+	  	//		ATRIBUINDO GRUPO AUTORIZADOR 	   //&#xd;
 	  	/////////////////////////////////////////////&#xd;
-&#xd;
+		&#xd;
+		&#xd;
         if (codfilial == &quot;1&quot;) {&#xd;
         	var fiscalAprov = &quot;Pool:Group:w_AnaFiscais_BSB&quot;;&#xd;
         }&#xd;
@@ -668,21 +833,19 @@ function atualizaSeqGestorCC() {&#xd;
         	var fiscalAprov = &quot;Pool:Group:w_AnaFiscais_RIO&quot;;&#xd;
         }&#xd;
         &#xd;
-        log.info(&quot;==========[ atualizaSeqGestorCC fiscalAprov ]========== &quot; + fiscalAprov);	&#xd;
-        &#xd;
+        log.info(&quot;==========[ selecionaAutorizador fiscalAprov ]========== &quot; + fiscalAprov);	&#xd;
+        	&#xd;
         hAPI.setCardValue(&quot;fiscalAprov&quot;, fiscalAprov);&#xd;
-        &#xd;
+    	&#xd;
+		&#xd;
 	}&#xd;
 	&#xd;
-	catch (e)&#xd;
-	{&#xd;
+	catch (e) {&#xd;
 		log.error(e);&#xd;
 		throw e;&#xd;
-		}&#xd;
+	}&#xd;
 	&#xd;
-}&#xd;
-&#xd;
-&#xd;
+} &#xd;
 &#xd;
 &#xd;
 function preencheDescritor(){&#xd;
@@ -707,7 +870,7 @@ function preencheDescritor(){&#xd;
 		&#xd;
 		// Retirando o campo do resultado&#xd;
         var descritor = datasetReturned.getValue(0, &quot;DESCRITOR&quot;);&#xd;
-        log.info(&quot;==========[ preencheDescritor ]========== &quot; + descritor);		&#xd;
+        log.info(&quot;==========[ preencheDescritor codfilial ]========== &quot; + descritor);		&#xd;
 		&#xd;
 	  	/////////////////////////////////////////////&#xd;
 	  	//			ATRIBUINDO NO FORMULARIO       //&#xd;
@@ -724,7 +887,6 @@ function preencheDescritor(){&#xd;
 	}&#xd;
 	&#xd;
 } &#xd;
-&#xd;
 &#xd;
 &#xd;
 function anexaDocumentos(){&#xd;
@@ -834,7 +996,95 @@ function anexaDocumentos(){&#xd;
 		throw e;&#xd;
 	}&#xd;
 }&#xd;
-</eventDescription>
+&#xd;
+&#xd;
+function atualizaEtapaWorkflow(){&#xd;
+	try {&#xd;
+		&#xd;
+		log.info(&quot;==========[ atualizaEtapaWorkflow ENTROU ]==========&quot;);&#xd;
+		&#xd;
+		var processo = getValue(&quot;WKNumProces&quot;);     //Recupera o numero da solicitação&#xd;
+		var requisitante = getValue(&quot;WKUser&quot;);		//Recupera o usuário corrente associado a atividade&#xd;
+			&#xd;
+		hAPI.setCardValue(&quot;n_solicitacao&quot;, processo);&#xd;
+		hAPI.setCardValue(&quot;solicitante&quot;, requisitante);&#xd;
+		    &#xd;
+		// Preparacao de filtro para consulta&#xd;
+		var c1 = DatasetFactory.createConstraint(&quot;SOLICITANTE&quot;, requisitante, requisitante, ConstraintType.MUST);&#xd;
+		var constraints = new Array(c1);&#xd;
+		log.info(&quot;==========[ atualizaEtapaWorkflow createDataset constraints ]========== &quot; + constraints);&#xd;
+			    &#xd;
+		// coleta dados do dataset, utlizando filtro&#xd;
+		var datasetReturned = DatasetFactory.getDataset(&quot;_RM_SOLICITANTE_CHEFIA&quot;, null, constraints, null);&#xd;
+		log.info(&quot;==========[ atualizaEtapaWorkflow createDataset datasetReturned ] ========== &quot; + datasetReturned);	  &#xd;
+			    &#xd;
+		// Gravando valores de retorno&#xd;
+		var retorno = datasetReturned.values;&#xd;
+		log.info(&quot;==========[ atualizaEtapaWorkflow createDataset dataset ]========== &quot; + retorno);&#xd;
+			&#xd;
+		// Retirando o campo do resultado&#xd;
+		var chefe = datasetReturned.getValue(0, &quot;CHEFIA&quot;);&#xd;
+		log.info(&quot;==========[ atualizaEtapaWorkflow createDataset chefe ]========== &quot; + chefe);&#xd;
+			&#xd;
+		// Gravando retorno		&#xd;
+		hAPI.setCardValue(&quot;chefia&quot;, chefe);&#xd;
+		&#xd;
+		&#xd;
+		////////////////////////////////&#xd;
+		// GESTOR DE CENTRO DE CUSTOS //&#xd;
+		////////////////////////////////&#xd;
+		&#xd;
+		 // Coletando variáveis para consulta de dataSet&#xd;
+	    var id_mov = hAPI.getCardValue(&quot;IdMov&quot;);&#xd;
+	    var codcoligada = 1;&#xd;
+	    &#xd;
+	    // Array com varáveis coletadas&#xd;
+	    var fields = new Array(codcoligada, id_mov, processo);&#xd;
+	    //log.info(&quot;==========[ atualizaEtapaWorkflow fields ]==========&quot;+fields);&#xd;
+	    &#xd;
+	    // Chamada do dataset&#xd;
+	    var dsNucleus = DatasetFactory.getDataset(&apos;wsDatasetNucleus&apos;, fields, null, null);&#xd;
+	    //log.info(&quot;==========[ atualizaEtapaWorkflow dsNucleus ]==========&quot;+dsNucleus);&#xd;
+	    &#xd;
+	    // Coletando XML do retorno&#xd;
+	    var retorno = dsNucleus.getValue(0, &quot;XML&quot;);&#xd;
+		//log.info(&quot;==========[ atualizaEtapaWorkflow retorno ]========== &quot; + retorno);&#xd;
+        &#xd;
+		// Ajustando retorno XML para retirada de elemento&#xd;
+        var factory = javax.xml.parsers.DocumentBuilderFactory.newInstance();&#xd;
+        var parser = factory.newDocumentBuilder();&#xd;
+        var source = new org.xml.sax.InputSource(new java.io.StringReader(retorno));&#xd;
+        var xmlResponse = parser.parse(source);&#xd;
+        &#xd;
+        // 1º Retirando o elemento 2º Retirando o conteúdo&#xd;
+        var nodes = xmlResponse.getElementsByTagName(&quot;CODCCUSTO&quot;);&#xd;
+        var ccusto = nodes.item(0).getTextContent();&#xd;
+        //log.info(&quot;==========[ atualizaEtapaWorkflow nodes CODCCUSTO ]========== &quot; + nodes.item(0).getTextContent());&#xd;
+ &#xd;
+        // Rodando novo dataset para coletar responsável do centro de custo&#xd;
+        var c1 = DatasetFactory.createConstraint(&quot;CODCCUSTO&quot;, ccusto, ccusto, ConstraintType.MUST);&#xd;
+        var constraints = new Array(c1);&#xd;
+        log.info(&quot;==========[ atualizaEtapaWorkflow constraints ]========== &quot; + constraints);&#xd;
+        &#xd;
+        // Executando chamada de dataset&#xd;
+        var datasetReturned = DatasetFactory.getDataset(&quot;_RM_GESTOR_CENTRO_CUSTO&quot;, null, constraints, null);&#xd;
+        &#xd;
+		// Retirando o campo do resultado&#xd;
+		var gestorcc = datasetReturned.getValue(0, &quot;RESPONSAVEL&quot;);&#xd;
+		log.info(&quot;==========[ atualizaEtapaWorkflow createDataset gestorcc ]========== &quot; + gestorcc);        &#xd;
+        &#xd;
+        // Gravando retorno no formulário		&#xd;
+		hAPI.setCardValue(&quot;gestorcc&quot;, gestorcc);&#xd;
+		&#xd;
+		&#xd;
+		}&#xd;
+	&#xd;
+	catch (e)&#xd;
+	{&#xd;
+		log.error(e);&#xd;
+		throw e;&#xd;
+	}&#xd;
+}</eventDescription>
     </WorkflowProcessEvent>
   </list>
   <list>
@@ -843,19 +1093,19 @@ function anexaDocumentos(){&#xd;
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
         <propertyId>AutomaticTasks</propertyId>
-        <version>9</version>
+        <version>20</version>
       </advancedProcessPropertiesPK>
-      <propertieValue>Campo</propertieValue>
+      <propertieValue>4</propertieValue>
     </AdvancedProcessProperties>
   </list>
   <list>
     <SwimLane>
-      <color>FFFFFF</color>
-      <height>111</height>
-      <width>531</width>
-      <positionX>2</positionX>
+      <color>8CC6FF</color>
+      <height>441</height>
+      <width>881</width>
+      <positionX>0</positionX>
       <positionY>0</positionY>
-      <stateName>Solicitação</stateName>
+      <stateName>Processamento </stateName>
       <type>2</type>
       <parentSequence>0</parentSequence>
       <swimLanePK>
@@ -866,12 +1116,12 @@ function anexaDocumentos(){&#xd;
       </swimLanePK>
     </SwimLane>
     <SwimLane>
-      <color>FFFFFF</color>
-      <height>126</height>
-      <width>531</width>
-      <positionX>2</positionX>
-      <positionY>241</positionY>
-      <stateName>GEF - Analise Fiscal</stateName>
+      <color>A7FCC0</color>
+      <height>109</height>
+      <width>426</width>
+      <positionX>0</positionX>
+      <positionY>440</positionY>
+      <stateName>Aprovado</stateName>
       <type>2</type>
       <parentSequence>0</parentSequence>
       <swimLanePK>
@@ -882,12 +1132,12 @@ function anexaDocumentos(){&#xd;
       </swimLanePK>
     </SwimLane>
     <SwimLane>
-      <color>A7FCC0</color>
-      <height>117</height>
-      <width>248</width>
-      <positionX>2</positionX>
-      <positionY>366</positionY>
-      <stateName>Aprovar</stateName>
+      <color>FF9B9B</color>
+      <height>109</height>
+      <width>456</width>
+      <positionX>425</positionX>
+      <positionY>440</positionY>
+      <stateName>Reprovado</stateName>
       <type>2</type>
       <parentSequence>0</parentSequence>
       <swimLanePK>
@@ -897,75 +1147,55 @@ function anexaDocumentos(){&#xd;
         <sequence>3</sequence>
       </swimLanePK>
     </SwimLane>
-    <SwimLane>
-      <color>FFFFFF</color>
-      <height>132</height>
-      <width>531</width>
-      <positionX>2</positionX>
-      <positionY>110</positionY>
-      <stateName>Gestor CC</stateName>
-      <type>2</type>
-      <parentSequence>0</parentSequence>
-      <swimLanePK>
-        <companyId>1</companyId>
-        <processId>ParcelaContratos</processId>
-        <version>1</version>
-        <sequence>4</sequence>
-      </swimLanePK>
-    </SwimLane>
-    <SwimLane>
-      <color>82b0b7</color>
-      <height>117</height>
-      <width>285</width>
-      <positionX>247</positionX>
-      <positionY>366</positionY>
-      <stateName>Reprovar</stateName>
-      <type>2</type>
-      <parentSequence>0</parentSequence>
-      <swimLanePK>
-        <companyId>1</companyId>
-        <processId>ParcelaContratos</processId>
-        <version>1</version>
-        <sequence>5</sequence>
-      </swimLanePK>
-    </SwimLane>
   </list>
   <list>
     <ProcessComponGraf>
       <componType>1</componType>
-      <positionX>40</positionX>
-      <positionY>400</positionY>
+      <positionX>80</positionX>
+      <positionY>460</positionY>
       <processComponGrafPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
         <version>1</version>
         <componGrafSequence>26</componGrafSequence>
       </processComponGrafPK>
-      <stateName>Aprovado - Libera Movimento</stateName>
+      <stateName>Aprovado</stateName>
     </ProcessComponGraf>
     <ProcessComponGraf>
       <componType>1</componType>
-      <positionX>290</positionX>
-      <positionY>400</positionY>
+      <positionX>640</positionX>
+      <positionY>450</positionY>
       <processComponGrafPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
         <version>1</version>
         <componGrafSequence>30</componGrafSequence>
       </processComponGrafPK>
-      <stateName>Reprovado - Cancela Movimento</stateName>
+      <stateName>Reprova e Cancela Movimento</stateName>
     </ProcessComponGraf>
     <ProcessComponGraf>
       <componType>1</componType>
       <positionX>70</positionX>
-      <positionY>0</positionY>
+      <positionY>156</positionY>
       <processComponGrafPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
         <version>1</version>
-        <componGrafSequence>130</componGrafSequence>
+        <componGrafSequence>79</componGrafSequence>
       </processComponGrafPK>
-      <stateName>Solicitações provenientes do Sistema RM</stateName>
+      <stateName>Usuário do movimento do RM</stateName>
+    </ProcessComponGraf>
+    <ProcessComponGraf>
+      <componType>1</componType>
+      <positionX>620</positionX>
+      <positionY>224</positionY>
+      <processComponGrafPK>
+        <companyId>1</companyId>
+        <processId>ParcelaContratos</processId>
+        <version>1</version>
+        <componGrafSequence>122</componGrafSequence>
+      </processComponGrafPK>
+      <stateName>Complementar anexando documentos e/ou rateio.</stateName>
     </ProcessComponGraf>
   </list>
   <list>
@@ -987,17 +1217,27 @@ function anexaDocumentos(){&#xd;
         <linkSequence>31</linkSequence>
       </processLinkAssocPK>
       <initialStateSequence>30</initialStateSequence>
-      <finalStateSequence>134</finalStateSequence>
+      <finalStateSequence>16</finalStateSequence>
     </ProcessLinkAssoc>
     <ProcessLinkAssoc>
       <processLinkAssocPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
         <version>1</version>
-        <linkSequence>131</linkSequence>
+        <linkSequence>80</linkSequence>
       </processLinkAssocPK>
-      <initialStateSequence>130</initialStateSequence>
-      <finalStateSequence>2</finalStateSequence>
+      <initialStateSequence>79</initialStateSequence>
+      <finalStateSequence>105</finalStateSequence>
+    </ProcessLinkAssoc>
+    <ProcessLinkAssoc>
+      <processLinkAssocPK>
+        <companyId>1</companyId>
+        <processId>ParcelaContratos</processId>
+        <version>1</version>
+        <linkSequence>123</linkSequence>
+      </processLinkAssocPK>
+      <initialStateSequence>122</initialStateSequence>
+      <finalStateSequence>116</finalStateSequence>
     </ProcessLinkAssoc>
   </list>
   <list>
@@ -1005,67 +1245,122 @@ function anexaDocumentos(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
-        <version>9</version>
-        <linkSequence>146</linkSequence>
+        <version>20</version>
+        <linkSequence>50</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
-      <positionX>288</positionX>
-      <positionY>139</positionY>
+      <positionX>775</positionX>
+      <positionY>22</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
-        <version>9</version>
-        <linkSequence>160</linkSequence>
-        <bendSequence>1</bendSequence>
-      </processLinkBendPK>
-      <positionX>413</positionX>
-      <positionY>306</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>ParcelaContratos</processId>
-        <version>9</version>
-        <linkSequence>161</linkSequence>
-        <bendSequence>1</bendSequence>
-      </processLinkBendPK>
-      <positionX>498</positionX>
-      <positionY>56</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>ParcelaContratos</processId>
-        <version>9</version>
-        <linkSequence>161</linkSequence>
+        <version>20</version>
+        <linkSequence>50</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
-      <positionX>498</positionX>
-      <positionY>425</positionY>
+      <positionX>532</positionX>
+      <positionY>22</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
-        <version>9</version>
-        <linkSequence>162</linkSequence>
+        <version>20</version>
+        <linkSequence>59</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
-      <positionX>144</positionX>
-      <positionY>233</positionY>
+      <positionX>159</positionX>
+      <positionY>23</positionY>
     </ProcessLinkBend>
     <ProcessLinkBend>
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
-        <version>9</version>
-        <linkSequence>162</linkSequence>
+        <version>20</version>
+        <linkSequence>59</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
-      <positionX>412</positionX>
-      <positionY>233</positionY>
+      <positionX>244</positionX>
+      <positionY>23</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>ParcelaContratos</processId>
+        <version>20</version>
+        <linkSequence>59</linkSequence>
+        <bendSequence>3</bendSequence>
+      </processLinkBendPK>
+      <positionX>529</positionX>
+      <positionY>23</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>ParcelaContratos</processId>
+        <version>20</version>
+        <linkSequence>113</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>860</positionX>
+      <positionY>92</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>ParcelaContratos</processId>
+        <version>20</version>
+        <linkSequence>113</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>860</positionX>
+      <positionY>495</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>ParcelaContratos</processId>
+        <version>20</version>
+        <linkSequence>115</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>315</positionX>
+      <positionY>361</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>ParcelaContratos</processId>
+        <version>20</version>
+        <linkSequence>115</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>775</positionX>
+      <positionY>361</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>ParcelaContratos</processId>
+        <version>20</version>
+        <linkSequence>121</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>375</positionX>
+      <positionY>361</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>ParcelaContratos</processId>
+        <version>20</version>
+        <linkSequence>121</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>773</positionX>
+      <positionY>361</positionY>
     </ProcessLinkBend>
   </list>
   <list/>
@@ -1074,171 +1369,20 @@ function anexaDocumentos(){&#xd;
       <extendedPropertyFieldPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
-        <version>9</version>
+        <version>20</version>
         <stateSequence>0</stateSequence>
         <propertyName>AutomaticTasks</propertyName>
       </extendedPropertyFieldPK>
       <propertyType>0</propertyType>
       <propertyDescription>AutomaticTasks</propertyDescription>
-      <propertyValue>Campo</propertyValue>
+      <propertyValue>4</propertyValue>
       <isDefaultProperty>false</isDefaultProperty>
     </ExtendedPropertyField>
   </list>
   <list/>
   <list/>
   <list/>
-  <list>
-    <ProcessAppConfiguration>
-      <id>0</id>
-      <tenantId>0</tenantId>
-      <processId>ParcelaContratos</processId>
-      <processVersion>9</processVersion>
-      <stateSequence>116</stateSequence>
-      <appKey>approval</appKey>
-      <appField>title</appField>
-      <description>Parcela de Contrato</description>
-    </ProcessAppConfiguration>
-    <ProcessAppConfiguration>
-      <id>0</id>
-      <tenantId>0</tenantId>
-      <processId>ParcelaContratos</processId>
-      <processVersion>9</processVersion>
-      <stateSequence>116</stateSequence>
-      <appKey>approval</appKey>
-      <appField>description</appField>
-      <description></description>
-    </ProcessAppConfiguration>
-    <ProcessAppConfiguration>
-      <id>0</id>
-      <tenantId>0</tenantId>
-      <processId>ParcelaContratos</processId>
-      <processVersion>9</processVersion>
-      <stateSequence>116</stateSequence>
-      <appKey>approval</appKey>
-      <appField>highlight</appField>
-      <description>@[form:valorliquido]</description>
-    </ProcessAppConfiguration>
-    <ProcessAppConfiguration>
-      <id>0</id>
-      <tenantId>0</tenantId>
-      <processId>ParcelaContratos</processId>
-      <processVersion>9</processVersion>
-      <stateSequence>116</stateSequence>
-      <appKey>approval</appKey>
-      <appField>approve</appField>
-      <description>145</description>
-    </ProcessAppConfiguration>
-    <ProcessAppConfiguration>
-      <id>0</id>
-      <tenantId>0</tenantId>
-      <processId>ParcelaContratos</processId>
-      <processVersion>9</processVersion>
-      <stateSequence>116</stateSequence>
-      <appKey>approval</appKey>
-      <appField>reject</appField>
-      <description>134</description>
-    </ProcessAppConfiguration>
-    <ProcessAppConfiguration>
-      <id>0</id>
-      <tenantId>0</tenantId>
-      <processId>ParcelaContratos</processId>
-      <processVersion>9</processVersion>
-      <stateSequence>145</stateSequence>
-      <appKey>approval</appKey>
-      <appField>title</appField>
-      <description>Parcela de Contrato</description>
-    </ProcessAppConfiguration>
-    <ProcessAppConfiguration>
-      <id>0</id>
-      <tenantId>0</tenantId>
-      <processId>ParcelaContratos</processId>
-      <processVersion>9</processVersion>
-      <stateSequence>145</stateSequence>
-      <appKey>approval</appKey>
-      <appField>description</appField>
-      <description></description>
-    </ProcessAppConfiguration>
-    <ProcessAppConfiguration>
-      <id>0</id>
-      <tenantId>0</tenantId>
-      <processId>ParcelaContratos</processId>
-      <processVersion>9</processVersion>
-      <stateSequence>145</stateSequence>
-      <appKey>approval</appKey>
-      <appField>highlight</appField>
-      <description>@[form:valorliquido]</description>
-    </ProcessAppConfiguration>
-    <ProcessAppConfiguration>
-      <id>0</id>
-      <tenantId>0</tenantId>
-      <processId>ParcelaContratos</processId>
-      <processVersion>9</processVersion>
-      <stateSequence>145</stateSequence>
-      <appKey>approval</appKey>
-      <appField>approve</appField>
-      <description>157</description>
-    </ProcessAppConfiguration>
-    <ProcessAppConfiguration>
-      <id>0</id>
-      <tenantId>0</tenantId>
-      <processId>ParcelaContratos</processId>
-      <processVersion>9</processVersion>
-      <stateSequence>145</stateSequence>
-      <appKey>approval</appKey>
-      <appField>reject</appField>
-      <description>116</description>
-    </ProcessAppConfiguration>
-    <ProcessAppConfiguration>
-      <id>0</id>
-      <tenantId>0</tenantId>
-      <processId>ParcelaContratos</processId>
-      <processVersion>9</processVersion>
-      <stateSequence>157</stateSequence>
-      <appKey>approval</appKey>
-      <appField>title</appField>
-      <description>Parcela de Contrato</description>
-    </ProcessAppConfiguration>
-    <ProcessAppConfiguration>
-      <id>0</id>
-      <tenantId>0</tenantId>
-      <processId>ParcelaContratos</processId>
-      <processVersion>9</processVersion>
-      <stateSequence>157</stateSequence>
-      <appKey>approval</appKey>
-      <appField>description</appField>
-      <description></description>
-    </ProcessAppConfiguration>
-    <ProcessAppConfiguration>
-      <id>0</id>
-      <tenantId>0</tenantId>
-      <processId>ParcelaContratos</processId>
-      <processVersion>9</processVersion>
-      <stateSequence>157</stateSequence>
-      <appKey>approval</appKey>
-      <appField>highlight</appField>
-      <description>@[form:valorliquido]</description>
-    </ProcessAppConfiguration>
-    <ProcessAppConfiguration>
-      <id>0</id>
-      <tenantId>0</tenantId>
-      <processId>ParcelaContratos</processId>
-      <processVersion>9</processVersion>
-      <stateSequence>157</stateSequence>
-      <appKey>approval</appKey>
-      <appField>approve</appField>
-      <description>8</description>
-    </ProcessAppConfiguration>
-    <ProcessAppConfiguration>
-      <id>0</id>
-      <tenantId>0</tenantId>
-      <processId>ParcelaContratos</processId>
-      <processVersion>9</processVersion>
-      <stateSequence>157</stateSequence>
-      <appKey>approval</appKey>
-      <appField>reject</appField>
-      <description>116</description>
-    </ProcessAppConfiguration>
-  </list>
+  <list/>
   <list/>
   <list/>
 </list>
