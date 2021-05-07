@@ -97,17 +97,20 @@ function selecionaAutorizador(){
 	  	//		ATRIBUINDO GRUPO AUTORIZADOR 	   //
 	  	/////////////////////////////////////////////
 		
-		
         if (codfilial == "1") {
         	var fiscalAprov = "Pool:Group:w_AnaFiscais_BSB";
+        	var financAprov = "Pool:Group:w_AnaFinanceiras_BSB";
         }
         else {
         	var fiscalAprov = "Pool:Group:w_AnaFiscais_RIO";
+        	var financAprov = "Pool:Group:w_AnaFinanceiras_RIO";
         }
         
         log.info("==========[ selecionaAutorizador fiscalAprov ]========== " + fiscalAprov);	
-        	
+        log.info("==========[ selecionaAutorizador financAprov ]========== " + financAprov);	
+        
         hAPI.setCardValue("fiscalAprov", fiscalAprov);
+    	hAPI.setCardValue("financAprov", financAprov);
     	
 		
 	}

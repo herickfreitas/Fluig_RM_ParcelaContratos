@@ -9,7 +9,7 @@
     <active>true</active>
     <publicProcess>true</publicProcess>
     <volumeId>Default</volumeId>
-    <categoryId>Integrações.Compras</categoryId>
+    <categoryId>Integrações.Financeiro</categoryId>
     <managerEngineAllocationId>Grupo</managerEngineAllocationId>
     <managerEngineAllocationConfiguration>&lt;AssignmentController&gt;&lt;Group&gt;w_COMPRADORES&lt;/Group&gt;&lt;/AssignmentController&gt;</managerEngineAllocationConfiguration>
     <snapshotFrequency>0</snapshotFrequency>
@@ -29,7 +29,7 @@
     <processDefinitionVersionPK>
       <companyId>1</companyId>
       <processId>Solicitações de Parcelas de Contrato</processId>
-      <version>20</version>
+      <version>21</version>
     </processDefinitionVersionPK>
     <versionDescription></versionDescription>
     <formId>0</formId>
@@ -179,8 +179,8 @@
       <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
       <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
       <automatic>false</automatic>
-      <positionX>90</positionX>
-      <positionY>320</positionY>
+      <positionX>60</positionX>
+      <positionY>190</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -211,7 +211,7 @@
       <stateName>Gestor Centro de Custo - Direcionar Solicitação</stateName>
       <stateDescription>Gestor Centro de Custo - Direcionar Solicitação</stateDescription>
       <instruction></instruction>
-      <deadlineTime>0</deadlineTime>
+      <deadlineTime>7200</deadlineTime>
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
@@ -367,7 +367,7 @@
       <stateName>Gestor Centro de Custo - Validar Solicitação</stateName>
       <stateDescription>Gestor Centro de Custo - Validar Solicitação</stateDescription>
       <instruction></instruction>
-      <deadlineTime>0</deadlineTime>
+      <deadlineTime>7200</deadlineTime>
       <deadlineFieldName></deadlineFieldName>
       <joint>false</joint>
       <agreementPercentage>0</agreementPercentage>
@@ -389,6 +389,58 @@
       <automatic>false</automatic>
       <positionX>320</positionX>
       <positionY>180</positionY>
+      <forecastedEffortType>0</forecastedEffortType>
+      <forecastedEffort>0</forecastedEffort>
+      <notifyManagerFollowUp>false</notifyManagerFollowUp>
+      <notifyManagerDelay>false</notifyManagerDelay>
+      <allowanceManagerTime>0</allowanceManagerTime>
+      <frequenceManagerTime>0</frequenceManagerTime>
+      <inhibitTransfer>true</inhibitTransfer>
+      <periodId>Expediente_CNC_10as19</periodId>
+      <stateType>0</stateType>
+      <bpmnType>80</bpmnType>
+      <signalId>0</signalId>
+      <counterSign>false</counterSign>
+      <openInstances>0</openInstances>
+      <noticeExpirationAuthorityTime>0</noticeExpirationAuthorityTime>
+      <noticeExpirationRequisitionerTime>0</noticeExpirationRequisitionerTime>
+      <noticeExpirationManagerTime>0</noticeExpirationManagerTime>
+      <destinationStates/>
+      <digitalSignature>false</digitalSignature>
+      <executionType>0</executionType>
+    </ProcessState>
+    <ProcessState>
+      <processStatePK>
+        <companyId>1</companyId>
+        <processId>ParcelaContratos</processId>
+        <version>1</version>
+        <sequence>124</sequence>
+      </processStatePK>
+      <stateName>Aprovado - Encaminhar Financeiro</stateName>
+      <stateDescription>Aprovado - Encaminhar Financeiro</stateDescription>
+      <instruction></instruction>
+      <deadlineTime>32400</deadlineTime>
+      <deadlineFieldName></deadlineFieldName>
+      <joint>false</joint>
+      <agreementPercentage>0</agreementPercentage>
+      <engineAllocationId>Campo Formulário</engineAllocationId>
+      <engineAllocationConfiguration>&lt;AssignmentController&gt;&lt;FormField&gt;financAprov&lt;/FormField&gt;&lt;/AssignmentController&gt;</engineAllocationConfiguration>
+      <selectColleague>1</selectColleague>
+      <initialState>false</initialState>
+      <notifyAuthorityDelay>true</notifyAuthorityDelay>
+      <notifyRequisitionerDelay>false</notifyRequisitionerDelay>
+      <allowanceAuthorityTime>3600</allowanceAuthorityTime>
+      <frequenceAuthorityTime>3600</frequenceAuthorityTime>
+      <allowanceRequisitionerTime>0</allowanceRequisitionerTime>
+      <frequenceRequisitionerTime>0</frequenceRequisitionerTime>
+      <transferAttachments>false</transferAttachments>
+      <subProcessId></subProcessId>
+      <formFolder>0</formFolder>
+      <notifyAuthorityFollowUp>true</notifyAuthorityFollowUp>
+      <notifyRequisitionerFollowUp>false</notifyRequisitionerFollowUp>
+      <automatic>false</automatic>
+      <positionX>60</positionX>
+      <positionY>350</positionY>
       <forecastedEffortType>0</forecastedEffortType>
       <forecastedEffort>0</forecastedEffort>
       <notifyManagerFollowUp>false</notifyManagerFollowUp>
@@ -599,40 +651,6 @@
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
         <version>1</version>
-        <linkSequence>114</linkSequence>
-      </processLinkPK>
-      <actionLabel></actionLabel>
-      <returnPermited>false</returnPermited>
-      <initialStateSequence>36</initialStateSequence>
-      <finalStateSequence>8</finalStateSequence>
-      <returnLabel></returnLabel>
-      <name></name>
-      <automaticLink>false</automaticLink>
-      <defaultLink>false</defaultLink>
-      <type>0</type>
-    </ProcessLink>
-    <ProcessLink>
-      <processLinkPK>
-        <companyId>1</companyId>
-        <processId>ParcelaContratos</processId>
-        <version>1</version>
-        <linkSequence>115</linkSequence>
-      </processLinkPK>
-      <actionLabel></actionLabel>
-      <returnPermited>false</returnPermited>
-      <initialStateSequence>36</initialStateSequence>
-      <finalStateSequence>12</finalStateSequence>
-      <returnLabel></returnLabel>
-      <name></name>
-      <automaticLink>false</automaticLink>
-      <defaultLink>false</defaultLink>
-      <type>0</type>
-    </ProcessLink>
-    <ProcessLink>
-      <processLinkPK>
-        <companyId>1</companyId>
-        <processId>ParcelaContratos</processId>
-        <version>1</version>
         <linkSequence>117</linkSequence>
       </processLinkPK>
       <actionLabel></actionLabel>
@@ -690,6 +708,74 @@
       <returnPermited>false</returnPermited>
       <initialStateSequence>118</initialStateSequence>
       <finalStateSequence>12</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>ParcelaContratos</processId>
+        <version>1</version>
+        <linkSequence>125</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>36</initialStateSequence>
+      <finalStateSequence>124</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>ParcelaContratos</processId>
+        <version>1</version>
+        <linkSequence>126</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>36</initialStateSequence>
+      <finalStateSequence>12</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>ParcelaContratos</processId>
+        <version>1</version>
+        <linkSequence>127</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>124</initialStateSequence>
+      <finalStateSequence>8</finalStateSequence>
+      <returnLabel></returnLabel>
+      <name></name>
+      <automaticLink>false</automaticLink>
+      <defaultLink>false</defaultLink>
+      <type>0</type>
+    </ProcessLink>
+    <ProcessLink>
+      <processLinkPK>
+        <companyId>1</companyId>
+        <processId>ParcelaContratos</processId>
+        <version>1</version>
+        <linkSequence>128</linkSequence>
+      </processLinkPK>
+      <actionLabel></actionLabel>
+      <returnPermited>false</returnPermited>
+      <initialStateSequence>124</initialStateSequence>
+      <finalStateSequence>16</finalStateSequence>
       <returnLabel></returnLabel>
       <name></name>
       <automaticLink>false</automaticLink>
@@ -825,17 +911,20 @@ function selecionaAutorizador(){&#xd;
 	  	//		ATRIBUINDO GRUPO AUTORIZADOR 	   //&#xd;
 	  	/////////////////////////////////////////////&#xd;
 		&#xd;
-		&#xd;
         if (codfilial == &quot;1&quot;) {&#xd;
         	var fiscalAprov = &quot;Pool:Group:w_AnaFiscais_BSB&quot;;&#xd;
+        	var financAprov = &quot;Pool:Group:w_AnaFinanceiras_BSB&quot;;&#xd;
         }&#xd;
         else {&#xd;
         	var fiscalAprov = &quot;Pool:Group:w_AnaFiscais_RIO&quot;;&#xd;
+        	var financAprov = &quot;Pool:Group:w_AnaFinanceiras_RIO&quot;;&#xd;
         }&#xd;
         &#xd;
         log.info(&quot;==========[ selecionaAutorizador fiscalAprov ]========== &quot; + fiscalAprov);	&#xd;
-        	&#xd;
+        log.info(&quot;==========[ selecionaAutorizador financAprov ]========== &quot; + financAprov);	&#xd;
+        &#xd;
         hAPI.setCardValue(&quot;fiscalAprov&quot;, fiscalAprov);&#xd;
+    	hAPI.setCardValue(&quot;financAprov&quot;, financAprov);&#xd;
     	&#xd;
 		&#xd;
 	}&#xd;
@@ -1093,7 +1182,7 @@ function atualizaEtapaWorkflow(){&#xd;
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
         <propertyId>AutomaticTasks</propertyId>
-        <version>20</version>
+        <version>21</version>
       </advancedProcessPropertiesPK>
       <propertieValue>4</propertieValue>
     </AdvancedProcessProperties>
@@ -1175,8 +1264,8 @@ function atualizaEtapaWorkflow(){&#xd;
     </ProcessComponGraf>
     <ProcessComponGraf>
       <componType>1</componType>
-      <positionX>70</positionX>
-      <positionY>156</positionY>
+      <positionX>210</positionX>
+      <positionY>30</positionY>
       <processComponGrafPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
@@ -1245,7 +1334,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
-        <version>20</version>
+        <version>21</version>
         <linkSequence>50</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1256,7 +1345,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
-        <version>20</version>
+        <version>21</version>
         <linkSequence>50</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -1267,7 +1356,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
-        <version>20</version>
+        <version>21</version>
         <linkSequence>59</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1278,7 +1367,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
-        <version>20</version>
+        <version>21</version>
         <linkSequence>59</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -1289,7 +1378,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
-        <version>20</version>
+        <version>21</version>
         <linkSequence>59</linkSequence>
         <bendSequence>3</bendSequence>
       </processLinkBendPK>
@@ -1300,7 +1389,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
-        <version>20</version>
+        <version>21</version>
         <linkSequence>113</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1311,7 +1400,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
-        <version>20</version>
+        <version>21</version>
         <linkSequence>113</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
@@ -1322,29 +1411,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
-        <version>20</version>
-        <linkSequence>115</linkSequence>
-        <bendSequence>1</bendSequence>
-      </processLinkBendPK>
-      <positionX>315</positionX>
-      <positionY>361</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>ParcelaContratos</processId>
-        <version>20</version>
-        <linkSequence>115</linkSequence>
-        <bendSequence>2</bendSequence>
-      </processLinkBendPK>
-      <positionX>775</positionX>
-      <positionY>361</positionY>
-    </ProcessLinkBend>
-    <ProcessLinkBend>
-      <processLinkBendPK>
-        <companyId>1</companyId>
-        <processId>ParcelaContratos</processId>
-        <version>20</version>
+        <version>21</version>
         <linkSequence>121</linkSequence>
         <bendSequence>1</bendSequence>
       </processLinkBendPK>
@@ -1355,12 +1422,56 @@ function atualizaEtapaWorkflow(){&#xd;
       <processLinkBendPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
-        <version>20</version>
+        <version>21</version>
         <linkSequence>121</linkSequence>
         <bendSequence>2</bendSequence>
       </processLinkBendPK>
       <positionX>773</positionX>
       <positionY>361</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>ParcelaContratos</processId>
+        <version>21</version>
+        <linkSequence>126</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>384</positionX>
+      <positionY>357</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>ParcelaContratos</processId>
+        <version>21</version>
+        <linkSequence>126</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>772</positionX>
+      <positionY>357</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>ParcelaContratos</processId>
+        <version>21</version>
+        <linkSequence>128</linkSequence>
+        <bendSequence>1</bendSequence>
+      </processLinkBendPK>
+      <positionX>859</positionX>
+      <positionY>392</positionY>
+    </ProcessLinkBend>
+    <ProcessLinkBend>
+      <processLinkBendPK>
+        <companyId>1</companyId>
+        <processId>ParcelaContratos</processId>
+        <version>21</version>
+        <linkSequence>128</linkSequence>
+        <bendSequence>2</bendSequence>
+      </processLinkBendPK>
+      <positionX>859</positionX>
+      <positionY>495</positionY>
     </ProcessLinkBend>
   </list>
   <list/>
@@ -1369,7 +1480,7 @@ function atualizaEtapaWorkflow(){&#xd;
       <extendedPropertyFieldPK>
         <companyId>1</companyId>
         <processId>ParcelaContratos</processId>
-        <version>20</version>
+        <version>21</version>
         <stateSequence>0</stateSequence>
         <propertyName>AutomaticTasks</propertyName>
       </extendedPropertyFieldPK>
