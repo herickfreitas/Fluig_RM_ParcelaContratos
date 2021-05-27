@@ -13,7 +13,33 @@ function createDataset(fields, constraints, sortFields) {
             processo = constraints[i].initialValue;    
         }
     }
- 
+    
+    /*	DRº LEANDRO VPF - 12/05/2021
+		DE    	18.01.01.01.58051	Gabinete da Vice-Presidência Financeira - DF
+				20.01.01.03.71020	CNC II - Brasília DF - SBN QD 02 Bloco E
+				20.01.01.04.71030	Brasília DF - Ed. Jessé Freire
+				20.01.01.06.71070	CNC III - Brasília DF - SBN QD 02 Bloco L
+				20.01.01.07.71080	CNC IX - Brasília DF - Ed. SEP/Sul EQ 713/913 Bloco E
+				20.01.01.08.71090	CNC IV - Brasília DF - SBN QD 02 Bloco N
+				20.01.01.09.71100	CNC V a VIII - Brasília DF - Ed. Centro Empresarial CNC
+				20.01.01.10.71200	Terreno na SGA/S QD 613/614 Lote 92
+				20.01.02.10.70100	Edifício Praia do Flamengo 200
+		PARA	18.01.02.01.58001	Gabinete da Vice-Presidência Financeira - RJ
+    */
+    if (processo == '18.01.01.01.58051' || processo == '20.01.01.03.71020' || processo == '20.01.01.04.71030' || processo == '20.01.01.06.71070' || 
+    	processo == '20.01.01.07.71080' || processo == '20.01.01.08.71090' || processo == '20.01.01.09.71100' || processo == '20.01.01.10.71200' || 
+    	processo == '20.01.02.10.70100' ) { processo = '18.01.02.01.58001'; }
+    
+    
+    /* DRº ERNANE GALVES - 17/05/2021
+      DE		15.01.02.02.56010	Consultoria Econômica da Presidência - RJ
+	  PARA		14.01.02.01.52010	Conselho Técnico - RJ
+    */
+    if (processo == '15.01.02.02.56010' ) {
+    		processo = '14.01.02.01.52010'; }
+     
+    
+    
     var myQuery = "SELECT * FROM [dbo].[Fluig_Colaboradores] ('"+processo+"') order by COLABORADOR ";
         
     log.info("QUERY: " + myQuery);
